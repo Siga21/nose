@@ -1,0 +1,3 @@
+OcasoOcasoBundle_homepage:
+    pattern:  /ocaso/{name}
+    defaults: { _controller: OcasoOcasoBundle:Default:index }
