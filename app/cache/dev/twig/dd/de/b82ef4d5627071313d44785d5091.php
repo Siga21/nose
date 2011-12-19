@@ -1,7 +1,7 @@
 <?php
 
-/* OcasoOcasoBundle:Default:ciao.html.twig */
-class __TwigTemplate_491e0c0cbaab42baa2bbbde62f91c2cd extends Twig_Template
+/* OcasoOcasoBundle:Secondo:secondo.html.twig */
+class __TwigTemplate_dddeb82ef4d5627071313d44785d5091 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -27,7 +27,7 @@ class __TwigTemplate_491e0c0cbaab42baa2bbbde62f91c2cd extends Twig_Template
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        echo "O noso Bundle";
+        echo "cambio de controlador";
     }
 
     // line 4
@@ -40,18 +40,11 @@ class __TwigTemplate_491e0c0cbaab42baa2bbbde62f91c2cd extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         // line 7
-        echo "<h1>Segunda accion, primeiro controlador</h1>
-<h2>Usuario : ";
-        // line 8
-        echo twig_escape_filter($this->env, $this->getContext($context, "name"), "html", null, true);
-        echo "</h2>
+        echo "<h1>Otro Controlador, primera accion</h1>
+<h2>enlazado desde otro controlador del mismo bundle</h2>
 <ul>
-  <li><strong>Enlaces</strong></li>
-   <li><a href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Ocaso_dos"), "html", null, true);
-        echo " \">outro controlador</a></li>
-   <li><a href=\"http://www.google.es\">Google</a></li>
+   <li><strong>Enlaces</strong></li>
+   <li><a href=\"http://www.mkvigo.com\">mkvigo</a></li>
    <li><a href=\"http://www.ubuntu.com\">Ubuntu</a></li>
    <li><a href=\"http://www.mandarinahome.es\">MandarinaHome</a></li>
 </ul>
@@ -60,7 +53,7 @@ class __TwigTemplate_491e0c0cbaab42baa2bbbde62f91c2cd extends Twig_Template
 
     public function getTemplateName()
     {
-        return "OcasoOcasoBundle:Default:ciao.html.twig";
+        return "OcasoOcasoBundle:Secondo:secondo.html.twig";
     }
 
     public function isTraitable()

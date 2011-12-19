@@ -5,3 +5,8 @@ Ocaso_principal:
 Ocaso_adios:
     pattern:  /cenit/{name}
     defaults: { _controller: OcasoOcasoBundle:Default:ciao }
+
+Ocaso_dos:
+    pattern:  /controlador2/
+    defaults: { _controller: OcasoOcasoBundle:Secondo:index }
+
