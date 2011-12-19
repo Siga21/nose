@@ -12,4 +12,9 @@ class DefaultController extends Controller
     {
         return $this->render('OcasoOcasoBundle:Default:index.html.twig', array('name' => $name));
     }
+
+    public function ciaoAction($name)
+    {
+        return $this->render('OcasoOcasoBundle:Default:ciao.html.twig', array('name' => $name));
+    }
 }

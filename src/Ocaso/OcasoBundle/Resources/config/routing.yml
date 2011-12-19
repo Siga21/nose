@@ -1,3 +1,7 @@
-OcasoOcasoBundle_homepage:
+Ocaso_principal:
     pattern:  /ocaso/{name}
     defaults: { _controller: OcasoOcasoBundle:Default:index }
+
+Ocaso_adios:
+    pattern:  /cenit/{name}
+    defaults: { _controller: OcasoOcasoBundle:Default:ciao }
