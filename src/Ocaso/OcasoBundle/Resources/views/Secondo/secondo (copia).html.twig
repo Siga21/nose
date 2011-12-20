@@ -1,24 +1,16 @@
 {% extends "OcasoOcasoBundle::plantilla.html.twig" %}
 {% block title "cambio de controlador" %}
 
-{% block cabeza %}
-	<h1>Portada</h1>
-{% endblock %}
+{% block content_header '' %}
 
-{% block contenido %}
-<br />
-<center>
+{% block content %}
+<h1>Otro Controlador, primera accion</h1>
 <h2>enlazado desde otro controlador del mismo bundle</h2>
-<h4>Probamos a crear a nosa plantilla e css</h4>
 <ul>
    <li><strong>Enlaces</strong></li>
    <li><a href="http://www.mkvigo.com">mkvigo</a></li>
    <li><a href="http://www.ubuntu.com">Ubuntu</a></li>
    <li><a href="http://www.mandarinahome.es">MandarinaHome</a></li>
 </ul>
-</center>
 {% endblock %}
 
-{% block footer %}
-<p>(c) nocopyright 2011</p>
-{% endblock %}

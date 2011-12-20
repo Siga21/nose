@@ -9,14 +9,15 @@ class __TwigTemplate_dddeb82ef4d5627071313d44785d5091 extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'content_header' => array($this, 'block_content_header'),
-            'content' => array($this, 'block_content'),
+            'cabeza' => array($this, 'block_cabeza'),
+            'contenido' => array($this, 'block_contenido'),
+            'footer' => array($this, 'block_footer'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "OcasoOcasoBundle::layout.html.twig";
+        return "OcasoOcasoBundle::plantilla.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -31,23 +32,36 @@ class __TwigTemplate_dddeb82ef4d5627071313d44785d5091 extends Twig_Template
     }
 
     // line 4
-    public function block_content_header($context, array $blocks = array())
+    public function block_cabeza($context, array $blocks = array())
     {
-        echo "";
+        // line 5
+        echo "\t<h1>Portada</h1>
+";
     }
 
-    // line 6
-    public function block_content($context, array $blocks = array())
+    // line 8
+    public function block_contenido($context, array $blocks = array())
     {
-        // line 7
-        echo "<h1>Otro Controlador, primera accion</h1>
+        // line 9
+        echo "<br />
+<center>
 <h2>enlazado desde otro controlador del mismo bundle</h2>
+<h4>Probamos a crear a nosa plantilla e css</h4>
 <ul>
    <li><strong>Enlaces</strong></li>
    <li><a href=\"http://www.mkvigo.com\">mkvigo</a></li>
    <li><a href=\"http://www.ubuntu.com\">Ubuntu</a></li>
    <li><a href=\"http://www.mandarinahome.es\">MandarinaHome</a></li>
 </ul>
+</center>
+";
+    }
+
+    // line 22
+    public function block_footer($context, array $blocks = array())
+    {
+        // line 23
+        echo "<p>(c) nocopyright 2011</p>
 ";
     }
 
