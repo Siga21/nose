@@ -161,6 +161,14 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\SecondoController::indexAction',  '_route' => 'Ocaso_dos',);
         }
 
+        // Ocaso_base
+        if (rtrim($pathinfo, '/') === '/gente') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'Ocaso_base');
+            }
+            return array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\GenteController::newAction',  '_route' => 'Ocaso_base',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

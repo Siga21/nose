@@ -36,6 +36,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'Ocaso_principal' => true,
        'Ocaso_adios' => true,
        'Ocaso_dos' => true,
+       'Ocaso_base' => true,
     );
 
     /**
@@ -172,5 +173,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getOcaso_dosRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\SecondoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/controlador2/',  ),));
+    }
+
+    private function getOcaso_baseRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\GenteController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/gente/',  ),));
     }
 }

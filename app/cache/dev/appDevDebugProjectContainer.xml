@@ -30,7 +30,7 @@
     <parameter key="database_port"></parameter>
     <parameter key="database_name">symfony</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password"></parameter>
+    <parameter key="database_password">achinoam</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
@@ -1552,7 +1552,7 @@
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
         <argument key="user">root</argument>
-        <argument key="password"></argument>
+        <argument key="password">achinoam</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
@@ -1598,7 +1598,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="OcasoOcasoBundle">Ocaso\OcasoBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service">
@@ -1629,7 +1631,26 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false"/>
+              <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver" public="false">
+                      <argument type="collection">
+                        <argument>/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine</argument>
+                      </argument>
+                      <call method="setNamespacePrefixes">
+                        <argument type="collection">
+                          <argument key="/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine">Ocaso\OcasoBundle\Entity</argument>
+                        </argument>
+                      </call>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Ocaso\OcasoBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">

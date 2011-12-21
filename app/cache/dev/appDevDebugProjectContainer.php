@@ -213,7 +213,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\Common\EventManager();
         $b->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit('UTF8'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'symfony', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => '', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'symfony', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => 'achinoam', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
     }
 
     /**
@@ -235,18 +235,25 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_70e91f7f82ba1e3c31d2afda3ca35516');
 
-        $d = new \Doctrine\ORM\Configuration();
-        $d->setEntityNamespaces(array());
-        $d->setMetadataCacheImpl($a);
-        $d->setQueryCacheImpl($b);
-        $d->setResultCacheImpl($c);
-        $d->setMetadataDriverImpl(new \Doctrine\ORM\Mapping\Driver\DriverChain());
-        $d->setProxyDir('/var/www/nose/app/cache/dev/doctrine/orm/Proxies');
-        $d->setProxyNamespace('Proxies');
-        $d->setAutoGenerateProxyClasses(true);
-        $d->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $d = new \Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver(array(0 => '/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine'));
+        $d->setNamespacePrefixes(array('/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine' => 'Ocaso\\OcasoBundle\\Entity'));
+        $d->setGlobalBasename('mapping');
 
-        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $d);
+        $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $e->addDriver($d, 'Ocaso\\OcasoBundle\\Entity');
+
+        $f = new \Doctrine\ORM\Configuration();
+        $f->setEntityNamespaces(array('OcasoOcasoBundle' => 'Ocaso\\OcasoBundle\\Entity'));
+        $f->setMetadataCacheImpl($a);
+        $f->setQueryCacheImpl($b);
+        $f->setResultCacheImpl($c);
+        $f->setMetadataDriverImpl($e);
+        $f->setProxyDir('/var/www/nose/app/cache/dev/doctrine/orm/Proxies');
+        $f->setProxyNamespace('Proxies');
+        $f->setAutoGenerateProxyClasses(true);
+        $f->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+
+        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $f);
     }
 
     /**
@@ -2135,7 +2142,7 @@ class appDevDebugProjectContainer extends Container
             'database_port' => '',
             'database_name' => 'symfony',
             'database_user' => 'root',
-            'database_password' => '',
+            'database_password' => 'achinoam',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'localhost',
             'mailer_user' => '',
