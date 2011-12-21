@@ -1,0 +1,41 @@
+<h1>Mano</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.Nombre }}</td>
+        </tr>
+        <tr>
+            <th>Especialidad</th>
+            <td>{{ entity.Especialidad }}</td>
+        </tr>
+        <tr>
+            <th>Fecha_de_nacimiento</th>
+            <td>{{ entity.FechaDeNacimiento|date('Y-m-d H:i:s') }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('mano') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('mano_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('mano_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

@@ -161,13 +161,66 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\SecondoController::indexAction',  '_route' => 'Ocaso_dos',);
         }
 
-        // Ocaso_base
-        if (rtrim($pathinfo, '/') === '/gente') {
+        // Siga21SociosBundle_homepage
+        if (rtrim($pathinfo, '/') === '/mano') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'Ocaso_base');
+                return $this->redirect($pathinfo.'/', 'Siga21SociosBundle_homepage');
             }
-            return array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\GenteController::newAction',  '_route' => 'Ocaso_base',);
+            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',  '_route' => 'Siga21SociosBundle_homepage',);
         }
+
+        // mano
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mano');
+            }
+            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',  '_route' => 'mano',);
+        }
+
+        // mano_show
+        if (preg_match('#^/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::showAction',)), array('_route' => 'mano_show'));
+        }
+
+        // mano_new
+        if ($pathinfo === '/new') {
+            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::newAction',  '_route' => 'mano_new',);
+        }
+
+        // mano_create
+        if ($pathinfo === '/create') {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_mano_create;
+            }
+            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::createAction',  '_route' => 'mano_create',);
+        }
+        not_mano_create:
+
+        // mano_edit
+        if (preg_match('#^/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::editAction',)), array('_route' => 'mano_edit'));
+        }
+
+        // mano_update
+        if (preg_match('#^/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_mano_update;
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::updateAction',)), array('_route' => 'mano_update'));
+        }
+        not_mano_update:
+
+        // mano_delete
+        if (preg_match('#^/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_mano_delete;
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::deleteAction',)), array('_route' => 'mano_delete'));
+        }
+        not_mano_delete:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

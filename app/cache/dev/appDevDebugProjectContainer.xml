@@ -18,6 +18,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="JMSSecurityExtraBundle">JMS\SecurityExtraBundle\JMSSecurityExtraBundle</parameter>
       <parameter key="OcasoOcasoBundle">Ocaso\OcasoBundle\OcasoOcasoBundle</parameter>
+      <parameter key="Siga21SociosBundle">Siga21\SociosBundle\Siga21SociosBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -28,9 +29,9 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port"></parameter>
-    <parameter key="database_name">symfony</parameter>
+    <parameter key="database_name">Socios</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">achinoam</parameter>
+    <parameter key="database_password">venganza</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
@@ -1548,11 +1549,11 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="stdClass" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
-        <argument key="dbname">symfony</argument>
+        <argument key="dbname">Socios</argument>
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
         <argument key="user">root</argument>
-        <argument key="password">achinoam</argument>
+        <argument key="password">venganza</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
@@ -1599,7 +1600,7 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
-              <argument key="OcasoOcasoBundle">Ocaso\OcasoBundle\Entity</argument>
+              <argument key="Siga21SociosBundle">Siga21\SociosBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -1636,11 +1637,11 @@
                   <argument type="service">
                     <service class="Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver" public="false">
                       <argument type="collection">
-                        <argument>/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine</argument>
+                        <argument>/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine</argument>
                       </argument>
                       <call method="setNamespacePrefixes">
                         <argument type="collection">
-                          <argument key="/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine">Ocaso\OcasoBundle\Entity</argument>
+                          <argument key="/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine">Siga21\SociosBundle\Entity</argument>
                         </argument>
                       </call>
                       <call method="setGlobalBasename">
@@ -1648,7 +1649,7 @@
                       </call>
                     </service>
                   </argument>
-                  <argument>Ocaso\OcasoBundle\Entity</argument>
+                  <argument>Siga21\SociosBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -1958,6 +1959,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>OcasoOcasoBundle</argument>
                   <argument>/var/www/nose/src/Ocaso/OcasoBundle/Resources/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>Siga21SociosBundle</argument>
+                  <argument>/var/www/nose/app/Resources/Siga21SociosBundle/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>Siga21SociosBundle</argument>
+                  <argument>/var/www/nose/src/Siga21/SociosBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>

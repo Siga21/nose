@@ -82,6 +82,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioFrameworkExtraBundle', '/var/www/nose/app/Resources/SensioFrameworkExtraBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioFrameworkExtraBundle', '/var/www/nose/vendor/bundles/Sensio/Bundle/FrameworkExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'JMSSecurityExtraBundle', '/var/www/nose/app/Resources/JMSSecurityExtraBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'JMSSecurityExtraBundle', '/var/www/nose/vendor/bundles/JMS/SecurityExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'OcasoOcasoBundle', '/var/www/nose/app/Resources/OcasoOcasoBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'OcasoOcasoBundle', '/var/www/nose/src/Ocaso/OcasoBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'Siga21SociosBundle', '/var/www/nose/app/Resources/Siga21SociosBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'Siga21SociosBundle', '/var/www/nose/src/Siga21/SociosBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AcmeDemoBundle', '/var/www/nose/app/Resources/AcmeDemoBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AcmeDemoBundle', '/var/www/nose/src/Acme/DemoBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WebProfilerBundle', '/var/www/nose/app/Resources/WebProfilerBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WebProfilerBundle', '/var/www/nose/vendor/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioDistributionBundle', '/var/www/nose/app/Resources/SensioDistributionBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioDistributionBundle', '/var/www/nose/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
@@ -213,7 +214,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\Common\EventManager();
         $b->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit('UTF8'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'symfony', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => 'achinoam', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'Socios', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => 'venganza', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
     }
 
     /**
@@ -235,15 +236,15 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_70e91f7f82ba1e3c31d2afda3ca35516');
 
-        $d = new \Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver(array(0 => '/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine'));
-        $d->setNamespacePrefixes(array('/var/www/nose/src/Ocaso/OcasoBundle/Resources/config/doctrine' => 'Ocaso\\OcasoBundle\\Entity'));
+        $d = new \Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver(array(0 => '/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine'));
+        $d->setNamespacePrefixes(array('/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine' => 'Siga21\\SociosBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $e->addDriver($d, 'Ocaso\\OcasoBundle\\Entity');
+        $e->addDriver($d, 'Siga21\\SociosBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('OcasoOcasoBundle' => 'Ocaso\\OcasoBundle\\Entity'));
+        $f->setEntityNamespaces(array('Siga21SociosBundle' => 'Siga21\\SociosBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);
@@ -2130,6 +2131,7 @@ class appDevDebugProjectContainer extends Container
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'JMSSecurityExtraBundle' => 'JMS\\SecurityExtraBundle\\JMSSecurityExtraBundle',
                 'OcasoOcasoBundle' => 'Ocaso\\OcasoBundle\\OcasoOcasoBundle',
+                'Siga21SociosBundle' => 'Siga21\\SociosBundle\\Siga21SociosBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -2140,9 +2142,9 @@ class appDevDebugProjectContainer extends Container
             'database_driver' => 'pdo_mysql',
             'database_host' => 'localhost',
             'database_port' => '',
-            'database_name' => 'symfony',
+            'database_name' => 'Socios',
             'database_user' => 'root',
-            'database_password' => 'achinoam',
+            'database_password' => 'venganza',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'localhost',
             'mailer_user' => '',

@@ -1,0 +1,18 @@
+Siga21\SociosBundle\Entity\Mano:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    Nombre:
+      type: string
+      length: '20'
+    Especialidad:
+      type: string
+      length: '25'
+    Fecha_De_Nacimiento:
+      type: datetime
+  lifecycleCallbacks: {  }

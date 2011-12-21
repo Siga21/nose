@@ -1,0 +1,39 @@
+#Siga21SociosBundle_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: Siga21SociosBundle:Default:index }
+
+
+Siga21SociosBundle_homepage:
+    pattern:  /mano/
+    defaults: { _controller: Siga21SociosBundle:Mano:index}
+
+mano:
+    pattern:  /
+    defaults: { _controller: "Siga21SociosBundle:Mano:index" }
+
+mano_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Siga21SociosBundle:Mano:show" }
+
+mano_new:
+    pattern:  /new
+    defaults: { _controller: "Siga21SociosBundle:Mano:new" }
+
+mano_create:
+    pattern:  /create
+    defaults: { _controller: "Siga21SociosBundle:Mano:create" }
+    requirements: { _method: post }
+
+mano_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Siga21SociosBundle:Mano:edit" }
+
+mano_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Siga21SociosBundle:Mano:update" }
+    requirements: { _method: post }
+
+mano_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Siga21SociosBundle:Mano:delete" }
+    requirements: { _method: post }

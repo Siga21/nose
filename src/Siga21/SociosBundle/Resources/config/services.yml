@@ -1,0 +1,7 @@
+parameters:
+#    siga21_socios.example.class: Siga21\SociosBundle\Example
+
+services:
+#    siga21_socios.example:
+#        class: %siga21_socios.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

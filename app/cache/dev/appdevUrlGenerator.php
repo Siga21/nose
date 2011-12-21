@@ -36,7 +36,14 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'Ocaso_principal' => true,
        'Ocaso_adios' => true,
        'Ocaso_dos' => true,
-       'Ocaso_base' => true,
+       'Siga21SociosBundle_homepage' => true,
+       'mano' => true,
+       'mano_show' => true,
+       'mano_new' => true,
+       'mano_create' => true,
+       'mano_edit' => true,
+       'mano_update' => true,
+       'mano_delete' => true,
     );
 
     /**
@@ -175,8 +182,43 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\SecondoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/controlador2/',  ),));
     }
 
-    private function getOcaso_baseRouteInfo()
+    private function getSiga21SociosBundle_homepageRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\GenteController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/gente/',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/',  ),));
+    }
+
+    private function getmanoRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+    }
+
+    private function getmano_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function getmano_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/new',  ),));
+    }
+
+    private function getmano_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/create',  ),));
+    }
+
+    private function getmano_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function getmano_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function getmano_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
     }
 }

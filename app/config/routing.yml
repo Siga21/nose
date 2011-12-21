@@ -8,6 +8,11 @@
 OcasoOcasoBundle:
     resource: "@OcasoOcasoBundle/Resources/config/routing.yml"
     prefix:   /
+    
+Siga21SociosBundle:
+        resource: "@Siga21SociosBundle/Resources/config/routing.yml"
+        prefix:   /
+    
 
 
 
