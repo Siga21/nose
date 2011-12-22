@@ -40,13 +40,16 @@ class __TwigTemplate_5ee30fcde8ffef1a219e0ae4e3b57725 extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         // line 7
-        echo "<h1>Portada</h1>
+        echo "<center><h1>Portada</h1>
 <h2>Usuario: ";
         // line 8
         echo twig_escape_filter($this->env, $this->getContext($context, "name"), "html", null, true);
-        echo "</h2>
+        echo "</h2></center>
 <ul>
-   <li><strong>Enlaces</strong></li>
+   <li><a href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Siga21SociosBundle_homepage"), "html", null, true);
+        echo " \">SOCIOS</a></li>
    <li><a href=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Ocaso_adios", array("name" => "Dardi")), "html", null, true);

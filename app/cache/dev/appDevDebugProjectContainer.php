@@ -214,7 +214,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\Common\EventManager();
         $b->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit('UTF8'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'Socios', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => 'achinoam', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'Socios', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => 'venganza', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
     }
 
     /**
@@ -2144,7 +2144,7 @@ class appDevDebugProjectContainer extends Container
             'database_port' => '',
             'database_name' => 'Socios',
             'database_user' => 'root',
-            'database_password' => 'achinoam',
+            'database_password' => 'venganza',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'localhost',
             'mailer_user' => '',

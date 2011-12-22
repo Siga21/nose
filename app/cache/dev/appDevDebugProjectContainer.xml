@@ -31,7 +31,7 @@
     <parameter key="database_port"></parameter>
     <parameter key="database_name">Socios</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">achinoam</parameter>
+    <parameter key="database_password">venganza</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
@@ -1553,7 +1553,7 @@
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
         <argument key="user">root</argument>
-        <argument key="password">achinoam</argument>
+        <argument key="password">venganza</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
