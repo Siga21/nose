@@ -103,12 +103,26 @@ body
         color: #fff;
 }
 
+
+#contenido input
+{
+	background-color: gray;
+	color : red;
+}
+#contenido label
+{
+	background-color: green;
+	color: white;
+	padding: 3px 3px 3px 3px;
+}
+
 .titulo
 {
 	background-color: green;
         color: #000;
         width: 150px;
 }      
+
 
  
 
