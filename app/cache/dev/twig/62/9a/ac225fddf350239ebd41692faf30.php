@@ -11,7 +11,7 @@ class __TwigTemplate_629aac225fddf350239ebd41692faf30 extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<h1>Mano edit</h1>
+        echo "<h1>Editar Socio</h1>
 
 <form action=\"";
         // line 3
@@ -24,7 +24,7 @@ class __TwigTemplate_629aac225fddf350239ebd41692faf30 extends Twig_Template
         echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "edit_form"));
         echo "
     <p>
-        <button type=\"submit\">Edit</button>
+        <button type=\"submit\">Editar</button>
     </p>
 </form>
 
@@ -34,7 +34,7 @@ class __TwigTemplate_629aac225fddf350239ebd41692faf30 extends Twig_Template
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano"), "html", null, true);
         echo "\">
-            Back to the list
+            Volver a la lista
         </a>
     </li>
     <li>
@@ -46,7 +46,7 @@ class __TwigTemplate_629aac225fddf350239ebd41692faf30 extends Twig_Template
         // line 18
         echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "delete_form"));
         echo "
-            <button type=\"submit\">Delete</button>
+            <button type=\"submit\">Borrar</button>
         </form>
     </li>
 </ul>

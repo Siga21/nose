@@ -103,10 +103,11 @@ body
         color: #fff;
 }
 
-.boton
+.titulo
 {
 	background-color: green;
         color: #000;
+        width: 150px;
 }      
 
  

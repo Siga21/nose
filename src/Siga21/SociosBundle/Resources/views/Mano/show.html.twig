@@ -1,41 +1,41 @@
-<h1>Mano</h1>
-
-<table class="record_properties">
-    <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ entity.id }}</td>
-        </tr>
-        <tr>
-            <th>Nombre</th>
-            <td>{{ entity.Nombre }}</td>
-        </tr>
-        <tr>
-            <th>Especialidad</th>
-            <td>{{ entity.Especialidad }}</td>
-        </tr>
-        <tr>
-            <th>Fecha_de_nacimiento</th>
-            <td>{{ entity.FechaDeNacimiento|date('Y-m-d H:i:s') }}</td>
-        </tr>
-    </tbody>
+{% extends "Siga21SociosBundle::basesocios.html.twig" %}
+{% block title "Ver Socio" %}
+{% block cabeza %}
+	<h1>Socio {{ entity.Nombre }}</h1>
+{% endblock %}
+{% block contenido %}
+<center>
+<br />
+<table  cellpading="3" border="1" style="font:bold 16px Arial;color: #a0a0a0; background-color #fff; border-collapse: collapse;">
+   <tr>
+      <th width="200" align="center">Id</th>
+      <td width="200" align="center">{{ entity.id }}</td>
+   </tr>
+   <tr>
+      <th align="center">Nombre</th>
+      <td align="center">{{ entity.Nombre }}</td>
+   </tr>
+   <tr>
+      <th align="center">Especialidad</th>
+      <td align="center">{{ entity.Especialidad }}</td>
+   </tr>
+   <tr>
+      <th align="center">Fecha_de_nacimiento</th>
+      <td align="center">{{ entity.FechaDeNacimiento|date('Y-m-d H:i:s') }}</td>
+   </tr>
 </table>
+<br />
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('mano') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('mano_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('mano_delete', { 'id': entity.id }) }}" method="post">
+<a href="{{ path('mano') }}"><img src="{{ asset('bundles/Siga21/images/back.gif') }}" alt="Volver"></a>
+<a href="{{ path('mano_edit', { 'id': entity.id }) }}"><img src="{{ asset('bundles/Siga21/images/editar.gif') }}" alt="Editar"></a>
+<form action="{{ path('mano_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+            <button type="submit"><img src="{{ asset('bundles/Siga21/images/trash.gif') }}" alt="Borrar"></button>
+</form>
+
+</center>
+{% endblock %}
+
+{% block footer %}
+<p>(c) nocopyright 2011</p>
+{% endblock %}
