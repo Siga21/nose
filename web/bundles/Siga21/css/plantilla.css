@@ -1,0 +1,113 @@
+body
+{
+	background: #f0f0f0;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+#cuerpo
+{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-bottom: 0px;
+	margin-right: auto;
+	width: 900px;
+        background-color: #f0f0f0;
+    
+}
+#cabeza
+{
+	
+	width: 900px;
+	height: 80px; 
+        background-color: #f0f0f0;
+        text-align: center;
+        padding-top: 10px;
+        color: green; /*#b0b0b0;*/
+}        
+
+#contenido
+{
+        padding: 10px 10px 10px 10px;
+	margin-top: 20px;
+	width: 900px;
+	background-color: #fff;
+        border-top: 1px solid #d0d0d0;      
+        border-left: 1px solid #d0d0d0;      
+        border-right: 1px solid #d0d0d0;      
+        border-bottom: 1px solid #d0d0d0;      
+        -moz-border-radius-bottomleft: 22px;
+        -moz-border-radius-bottomright: 22px;
+        -moz-border-radius-topleft: 22px;
+        -moz-border-radius-topright: 22px;
+        -webkit-border-top-left-radius: 22px;
+        -webkit-border-top-right-radius: 22px;
+        -webkit-border-bottom-left-radius: 22px;
+        -webkit-border-bottom-right-radius: 22px;
+  
+}
+
+#footer
+{
+        margin-top: 20px;
+	width: 900px;
+	height: 50px;
+	background-color: #f0f0f0;
+	color: #999;
+	padding-top: 2px;
+        text-align: center;
+}
+
+#contenido ul 
+{
+        list-style: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+}
+
+#contenido li 
+{
+        background-color: #d0d0d0;
+        color: #fff;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+}
+#contenido a
+{
+	text-decoration:none;
+        color:green;
+}
+
+#contenido li:hover
+{
+        background-color:gray;
+        color: #fff;  
+}
+
+#contenido img
+{
+        border: none;
+}
+
+#contenido th
+{
+        background-color: green;
+        color: #fff;
+}
+
+.boton
+{
+	background-color: green;
+        color: #000;
+}      
+
+ 
+

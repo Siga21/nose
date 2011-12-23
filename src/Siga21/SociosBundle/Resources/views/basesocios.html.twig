@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       {% block head %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{ asset('bundles/Siga21/css/plantilla.css') }}" type="text/css" media="all" />
+        <title>{% block title %}O noso bundle{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+       {% endblock %} 
+    </head>
+    <body>
+       <div id="cuerpo">
+          <div id="cabeza">{% block cabeza %} {% endblock %}</div>
+       	  <div id="contenido">{% block contenido %} {% endblock %}</div>        
+          <div id="footer">{% block footer %} {% endblock %}</div>        
+       </div>
+    </body>
+</html>
