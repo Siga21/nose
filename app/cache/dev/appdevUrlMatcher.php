@@ -222,6 +222,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_mano_delete:
 
+        // mano_busca
+        if ($pathinfo === '/busca') {
+            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',  '_route' => 'mano_busca',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

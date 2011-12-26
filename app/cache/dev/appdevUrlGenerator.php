@@ -44,6 +44,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'mano_edit' => true,
        'mano_update' => true,
        'mano_delete' => true,
+       'mano_busca' => true,
     );
 
     /**
@@ -220,5 +221,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getmano_deleteRouteInfo()
     {
         return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function getmano_buscaRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/busca',  ),));
     }
 }

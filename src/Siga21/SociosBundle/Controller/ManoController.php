@@ -50,7 +50,6 @@ class ManoController extends Controller
 
         ));
     }
-
     /**
      * Displays a form to create a new Mano entity.
      *
@@ -183,5 +182,13 @@ class ManoController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    /**
+     * Busqueda por id
+     *
+     */
+    public function buscaAction()
+    {
+        return $this->render('Siga21SociosBundle:Mano:busca.html.twig');
     }
 }

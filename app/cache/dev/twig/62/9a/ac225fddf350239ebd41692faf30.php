@@ -43,53 +43,51 @@ class __TwigTemplate_629aac225fddf350239ebd41692faf30 extends Twig_Template
     public function block_contenido($context, array $blocks = array())
     {
         // line 7
-        echo "<center>
-<br />
+        echo "<br />
 <form action=\"";
-        // line 9
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano_update", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderEnctype($this->getContext($context, "edit_form"));
         echo ">
     ";
-        // line 10
+        // line 9
         echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "edit_form"));
         echo "
     <p>
         <button type=\"submit\"><img src=\"";
-        // line 12
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/Siga21/images/editar.gif"), "html", null, true);
         echo "\" alt=\"Editar\"></button>
     </p>
 </form>
 <a href=\"";
-        // line 15
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano"), "html", null, true);
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/Siga21/images/back.gif"), "html", null, true);
         echo "\" alt=\"Volver\"></a>
 <form action=\"";
-        // line 16
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano_delete", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
         echo "\" method=\"post\">
             ";
-        // line 17
+        // line 16
         echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "delete_form"));
         echo "
          <button type=\"submit\"><img src=\"";
-        // line 18
+        // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/Siga21/images/trash.gif"), "html", null, true);
         echo "\" alt=\"Borrar\"></button>
 </form>   
 
-</center>
 ";
     }
 
-    // line 24
+    // line 22
     public function block_footer($context, array $blocks = array())
     {
-        // line 25
+        // line 23
         echo "<p>(c) nocopyright 2011</p>
 ";
     }

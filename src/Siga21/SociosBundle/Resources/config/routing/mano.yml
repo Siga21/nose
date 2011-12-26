@@ -28,3 +28,7 @@ mano_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "Siga21SociosBundle:Mano:delete" }
     requirements: { _method: post }
+
+mano_busca:
+    pattern:  /busca
+    defaults: { _controller: "Siga21SociosBundle:Mano:busca" }

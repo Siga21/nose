@@ -106,14 +106,15 @@ body
 
 #contenido input
 {
-	background-color: gray;
-	color : red;
+	background-color: #fff;
+	color : green;
 }
 #contenido label
 {
-	background-color: green;
-	color: white;
-	padding: 3px 3px 3px 3px;
+	background-color: #fff;
+	color: black;
+        text-align : left;
+	padding: 3px 30px 3px 3px;
 }
 
 .titulo

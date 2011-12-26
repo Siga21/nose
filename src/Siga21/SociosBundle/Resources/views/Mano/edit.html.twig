@@ -4,7 +4,6 @@
 	<h1>Socios</h1>
 {% endblock %}
 {% block contenido %}
-<center>
 <br />
 <form action="{{ path('mano_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     {{ form_widget(edit_form) }}
@@ -18,7 +17,6 @@
          <button type="submit"><img src="{{ asset('bundles/Siga21/images/trash.gif') }}" alt="Borrar"></button>
 </form>   
 
-</center>
 {% endblock %}
 
 {% block footer %}

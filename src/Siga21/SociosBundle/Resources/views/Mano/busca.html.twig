@@ -1,0 +1,20 @@
+{% extends "Siga21SociosBundle::basesocios.html.twig" %}
+{% block title "Busqueda por id" %}
+{% block cabeza %}
+	<h1>Socios</h1>
+{% endblock %}
+{% block contenido %}
+<center>
+<br />
+
+<form name="formulario" action="{{ path('mano_show', {'id': '2'}) }}" method="post">
+	<label>Id a buscar:</label>
+        <input type="text" name="_id">
+        <button type="submit">Buscar</button>
+</form>
+</center>
+{% endblock %}
+
+{% block footer %}
+<p>(c) nocopyright 2011</p>
+{% endblock %}

@@ -10,4 +10,4 @@ Siga21SociosBundle_homepage:
 _mano:
     resource: ./routing/mano.yml
 
-   
+
