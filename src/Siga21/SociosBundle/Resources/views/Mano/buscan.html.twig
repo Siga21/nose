@@ -1,0 +1,20 @@
+{% extends "Siga21SociosBundle::basesocios.html.twig" %}
+{% block title "Busqueda por nombre" %}
+{% block cabeza %}
+	<h1>Socios</h1>
+{% endblock %}
+{% block contenido %}
+<center>
+<br />
+
+<form name="formulario" action="{{ path('mano_buscanshow') }}" method="post">
+	<label>Nombre a buscar:</label>
+        <input id="nombre" type="text" name="fnombre" />
+        <button type="submit">Buscar</button>
+</form>
+</center>
+{% endblock %}
+
+{% block footer %}
+<p>(c) nocopyright 2011</p>
+{% endblock %}

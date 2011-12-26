@@ -192,7 +192,7 @@ class ManoController extends Controller
         return $this->render('Siga21SociosBundle:Mano:busca.html.twig');
     }
     /**
-     * Finds and displays a Mano entity.
+     * Muestra el registro buscado por id 
      *
      */
     public function buscashowAction()
@@ -203,7 +203,7 @@ class ManoController extends Controller
         $entity = $em->getRepository('Siga21SociosBundle:Mano')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Mano entity.');
+           return $this->render('Siga21SociosBundle:Mano:error.html.twig');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -214,6 +214,30 @@ class ManoController extends Controller
 
         ));
     }
+     /**
+     * Busqueda por nombre
+     *
+     */
+    public function buscanAction()
+    {
+        return $this->render('Siga21SociosBundle:Mano:buscan.html.twig');
+    }
+    /**
+     * Muestra el registro buscado por id 
+     *
+     */
+
+    public function buscanshowAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $peticion = $this->getRequest();
+        $nome = $peticion->request->get('fnombre');   
+        $entities = $em->getRepository('Siga21SociosBundle:Mano')->findByNombre($nome);
+        return $this->render('Siga21SociosBundle:Mano:index.html.twig', array(
+            'entities' => $entities
+        ));
+    }
+
 
 
 }

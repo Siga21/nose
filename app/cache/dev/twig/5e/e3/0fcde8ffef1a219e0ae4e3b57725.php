@@ -57,7 +57,11 @@ class __TwigTemplate_5ee30fcde8ffef1a219e0ae4e3b57725 extends Twig_Template
    <li><a href=\"";
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano_busca"), "html", null, true);
-        echo "\">Busca socios</a></li>
+        echo "\">Busca socios por id</a></li>
+   <li><a href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano_buscan"), "html", null, true);
+        echo "\">Busca socios por nombre</a></li>
    <li><a href=\"http://www.mandarinahome.es\">MandarinaHome</a></li>
 </ul>
 ";

@@ -32,6 +32,18 @@ mano_delete:
 mano_busca:
     pattern:  /busca
     defaults: { _controller: "Siga21SociosBundle:Mano:busca" }
+
 mano_buscashow:
     pattern:  /buscashow
     defaults: { _controller: "Siga21SociosBundle:Mano:buscashow" }
+
+mano_buscan:
+    pattern:  /buscan
+    defaults: { _controller: "Siga21SociosBundle:Mano:buscan" }
+
+mano_buscanshow:
+    pattern:  /buscanshow
+    defaults: { _controller: "Siga21SociosBundle:Mano:buscanshow" }
+
+
+
