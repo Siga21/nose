@@ -191,4 +191,29 @@ class ManoController extends Controller
     {
         return $this->render('Siga21SociosBundle:Mano:busca.html.twig');
     }
+    /**
+     * Finds and displays a Mano entity.
+     *
+     */
+    public function buscashowAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $peticion = $this->getRequest();
+        $id = $peticion->request->get('fid');       
+        $entity = $em->getRepository('Siga21SociosBundle:Mano')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Mano entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('Siga21SociosBundle:Mano:show.html.twig', array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+
+        ));
+    }
+
+
 }

@@ -54,7 +54,10 @@ class __TwigTemplate_5ee30fcde8ffef1a219e0ae4e3b57725 extends Twig_Template
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Ocaso_adios", array("name" => "Dardi")), "html", null, true);
         echo " \">Segunda accion primer controlador</a></li>
-   <li><a href=\"http://www.ubuntu.com\">Ubuntu</a></li>
+   <li><a href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano_busca"), "html", null, true);
+        echo "\">Busca socios</a></li>
    <li><a href=\"http://www.mandarinahome.es\">MandarinaHome</a></li>
 </ul>
 ";

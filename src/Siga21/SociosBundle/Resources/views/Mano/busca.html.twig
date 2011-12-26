@@ -7,9 +7,9 @@
 <center>
 <br />
 
-<form name="formulario" action="{{ path('mano_show', {'id': '2'}) }}" method="post">
+<form name="formulario" action="{{ path('mano_buscashow') }}" method="post">
 	<label>Id a buscar:</label>
-        <input type="text" name="_id">
+        <input id="numero" type="text" name="fid" />
         <button type="submit">Buscar</button>
 </form>
 </center>

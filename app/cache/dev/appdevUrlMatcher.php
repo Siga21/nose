@@ -227,6 +227,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',  '_route' => 'mano_busca',);
         }
 
+        // mano_buscashow
+        if ($pathinfo === '/buscashow') {
+            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscashowAction',  '_route' => 'mano_buscashow',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

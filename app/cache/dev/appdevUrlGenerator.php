@@ -45,6 +45,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'mano_update' => true,
        'mano_delete' => true,
        'mano_busca' => true,
+       'mano_buscashow' => true,
     );
 
     /**
@@ -226,5 +227,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getmano_buscaRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/busca',  ),));
+    }
+
+    private function getmano_buscashowRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscashowAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/buscashow',  ),));
     }
 }
