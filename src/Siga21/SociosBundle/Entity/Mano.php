@@ -29,8 +29,6 @@ class Mano
      * @var datetime $Fecha_De_Nacimiento
      */
     private $Fecha_De_Nacimiento;
-
-
     /**
      * Get id
      *

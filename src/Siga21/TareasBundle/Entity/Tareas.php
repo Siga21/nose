@@ -4,6 +4,7 @@ namespace Siga21\TareasBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * Siga21\TareasBundle\Entity\Tareas
  *
@@ -62,7 +63,6 @@ class Tareas
      * @ORM\Column(name="Terminada", type="boolean")
      */
     private $Terminada;
-
 
     /**
      * Get id
