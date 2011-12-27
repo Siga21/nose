@@ -33,6 +33,14 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
+       'Siga21TareasBundle_homepage' => true,
+       'tareas' => true,
+       'tareas_show' => true,
+       'tareas_new' => true,
+       'tareas_create' => true,
+       'tareas_edit' => true,
+       'tareas_update' => true,
+       'tareas_delete' => true,
        'Ocaso_principal' => true,
        'Ocaso_adios' => true,
        'Ocaso_dos' => true,
@@ -169,6 +177,46 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function get_configurator_finalRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
+    }
+
+    private function getSiga21TareasBundle_homepageRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/',  ),));
+    }
+
+    private function gettareasRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+    }
+
+    private function gettareas_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function gettareas_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/new',  ),));
+    }
+
+    private function gettareas_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/create',  ),));
+    }
+
+    private function gettareas_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function gettareas_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function gettareas_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
     }
 
     private function getOcaso_principalRouteInfo()

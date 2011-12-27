@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Ocaso\OcasoBundle\OcasoOcasoBundle(),
             new Siga21\SociosBundle\Siga21SociosBundle(),
+            new Siga21\TareasBundle\Siga21TareasBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

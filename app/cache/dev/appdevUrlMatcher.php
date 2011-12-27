@@ -143,6 +143,67 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // Siga21TareasBundle_homepage
+        if (rtrim($pathinfo, '/') === '/tareas') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'Siga21TareasBundle_homepage');
+            }
+            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'Siga21TareasBundle_homepage',);
+        }
+
+        // tareas
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'tareas');
+            }
+            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'tareas',);
+        }
+
+        // tareas_show
+        if (preg_match('#^/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::showAction',)), array('_route' => 'tareas_show'));
+        }
+
+        // tareas_new
+        if ($pathinfo === '/new') {
+            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::newAction',  '_route' => 'tareas_new',);
+        }
+
+        // tareas_create
+        if ($pathinfo === '/create') {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_tareas_create;
+            }
+            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::createAction',  '_route' => 'tareas_create',);
+        }
+        not_tareas_create:
+
+        // tareas_edit
+        if (preg_match('#^/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::editAction',)), array('_route' => 'tareas_edit'));
+        }
+
+        // tareas_update
+        if (preg_match('#^/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_tareas_update;
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::updateAction',)), array('_route' => 'tareas_update'));
+        }
+        not_tareas_update:
+
+        // tareas_delete
+        if (preg_match('#^/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_tareas_delete;
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::deleteAction',)), array('_route' => 'tareas_delete'));
+        }
+        not_tareas_delete:
+
         // Ocaso_principal
         if (0 === strpos($pathinfo, '/ocaso') && preg_match('#^/ocaso/(?P<name>[^/]+?)$#xs', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'Ocaso_principal'));

@@ -1,0 +1,13 @@
+#Siga21SociosBundle_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: Siga21SociosBundle:Default:index }
+
+
+Siga21TareasBundle_homepage:
+    pattern:  /tareas/
+    defaults: { _controller: Siga21TareasBundle:Tareas:index}
+
+_tareas:
+    resource: ./routing/tareas.yml
+
+
