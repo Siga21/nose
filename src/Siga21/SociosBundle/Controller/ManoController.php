@@ -232,7 +232,7 @@ class ManoController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
         $peticion = $this->getRequest();
         $nome = $peticion->request->get('fnombre');   
-        $entities = $em->getRepository('Siga21SociosBundle:Mano')->findByNombre($nome);
+        $entities = $em->getRepository('Siga21SociosBundle:Mano')->findBy(array('Nombre' => $nome ));
         return $this->render('Siga21SociosBundle:Mano:index.html.twig', array(
             'entities' => $entities
         ));
