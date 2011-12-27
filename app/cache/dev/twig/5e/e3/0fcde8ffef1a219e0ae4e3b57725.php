@@ -62,7 +62,10 @@ class __TwigTemplate_5ee30fcde8ffef1a219e0ae4e3b57725 extends Twig_Template
         // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mano_buscan"), "html", null, true);
         echo "\">Busca socios por nombre</a></li>
-   <li><a href=\"http://www.mandarinahome.es\">MandarinaHome</a></li>
+   <li><a href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tareas_portada"), "html", null, true);
+        echo "\">Tareas</a></li>
 </ul>
 ";
     }

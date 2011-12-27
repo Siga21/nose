@@ -33,7 +33,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
-       'Siga21TareasBundle_homepage' => true,
+       'tareas_portada' => true,
        'tareas' => true,
        'tareas_show' => true,
        'tareas_new' => true,
@@ -179,7 +179,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
     }
 
-    private function getSiga21TareasBundle_homepageRouteInfo()
+    private function gettareas_portadaRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/',  ),));
     }

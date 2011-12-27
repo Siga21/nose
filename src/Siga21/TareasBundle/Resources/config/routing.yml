@@ -3,7 +3,7 @@
 #    defaults: { _controller: Siga21SociosBundle:Default:index }
 
 
-Siga21TareasBundle_homepage:
+tareas_portada:
     pattern:  /tareas/
     defaults: { _controller: Siga21TareasBundle:Tareas:index}
 

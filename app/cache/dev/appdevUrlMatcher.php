@@ -143,12 +143,12 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // Siga21TareasBundle_homepage
+        // tareas_portada
         if (rtrim($pathinfo, '/') === '/tareas') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'Siga21TareasBundle_homepage');
+                return $this->redirect($pathinfo.'/', 'tareas_portada');
             }
-            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'Siga21TareasBundle_homepage',);
+            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'tareas_portada',);
         }
 
         // tareas
