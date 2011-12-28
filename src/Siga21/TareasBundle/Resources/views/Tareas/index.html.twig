@@ -4,7 +4,6 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Id</th>
             <th>Nombre</th>
             <th>Fecha</th>
             <th>Socio</th>
@@ -17,7 +16,6 @@
     {% for entity in entities %}
         <tr>
             <td><a href="{{ path('tareas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td>{{ entity.Id }}</td>
             <td>{{ entity.Nombre }}</td>
             <td>{% if entity.Fecha %}{{ entity.Fecha|date('Y-m-d H:i:s') }}{% endif%}</td>
             <td>{{ entity.Socio }}</td>

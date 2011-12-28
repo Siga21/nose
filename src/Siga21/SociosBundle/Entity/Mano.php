@@ -34,6 +34,18 @@ class Mano
      *
      * @return integer 
      */
+
+    /**
+      * @ORM\OneToMany(targetEntity="Tareas", mappedBy="Socios")
+      */
+    protected $tareas;
+    public function __construct()
+    {
+         $this->tareas = new ArrayCollection();
+    }
+
+
+
     public function getId()
     {
         return $this->id;

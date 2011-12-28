@@ -22,14 +22,7 @@ class Tareas
      */
     private $id;
 
-    /**
-     * @var integer $Id
-     *
-     * @ORM\Column(name="Id", type="integer")
-     */
-    private $Id;
-
-    /**
+   /**
      * @var string $Nombre
      *
      * @ORM\Column(name="Nombre", type="string", length=25)
@@ -47,6 +40,8 @@ class Tareas
      * @var integer $Socio
      *
      * @ORM\Column(name="Socio", type="integer")
+     * @ORM\ManyToOne(targetEntity="Socios", inversedBy="Tareas")
+     * @orm\JoinColumn(name="Socios_id", referencedColumnName="id")
      */
     private $Socio;
 
@@ -54,6 +49,7 @@ class Tareas
      * @var string $Notas
      *
      * @ORM\Column(name="Notas", type="string", length=255)
+     
      */
     private $Notas;
 
@@ -69,6 +65,13 @@ class Tareas
      *
      * @return integer 
      */
+
+   /**
+    * @ORM\ManyToOne(targetEntity="Tareas", inversedBy="Socios")
+     * @orm\JoinColumn(name="Socios_id", referencedColumnName="id")
+     */
+    protected $Socios;
+
     public function getId()
     {
         return $this->id;
@@ -182,5 +185,25 @@ class Tareas
     public function getTerminada()
     {
         return $this->Terminada;
+    }
+
+    /**
+     * Set Socios
+     *
+     * @param Siga21\TareasBundle\Entity\Mano $socios
+     */
+    public function setSocios(\Siga21\TareasBundle\Entity\Mano $socios)
+    {
+        $this->Socios = $socios;
+    }
+
+    /**
+     * Get Socios
+     *
+     * @return Siga21\TareasBundle\Entity\Mano 
+     */
+    public function getSocios()
+    {
+        return $this->Socios;
     }
 }
