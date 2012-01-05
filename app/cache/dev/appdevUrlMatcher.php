@@ -143,6 +143,67 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // asociados_portada
+        if (rtrim($pathinfo, '/') === '/asociados') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'asociados_portada');
+            }
+            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',  '_route' => 'asociados_portada',);
+        }
+
+        // asociados
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'asociados');
+            }
+            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',  '_route' => 'asociados',);
+        }
+
+        // asociados_show
+        if (preg_match('#^/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::showAction',)), array('_route' => 'asociados_show'));
+        }
+
+        // asociados_new
+        if ($pathinfo === '/new') {
+            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::newAction',  '_route' => 'asociados_new',);
+        }
+
+        // asociados_create
+        if ($pathinfo === '/create') {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_asociados_create;
+            }
+            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::createAction',  '_route' => 'asociados_create',);
+        }
+        not_asociados_create:
+
+        // asociados_edit
+        if (preg_match('#^/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::editAction',)), array('_route' => 'asociados_edit'));
+        }
+
+        // asociados_update
+        if (preg_match('#^/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_asociados_update;
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::updateAction',)), array('_route' => 'asociados_update'));
+        }
+        not_asociados_update:
+
+        // asociados_delete
+        if (preg_match('#^/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_asociados_delete;
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::deleteAction',)), array('_route' => 'asociados_delete'));
+        }
+        not_asociados_delete:
+
         // tareas_portada
         if (rtrim($pathinfo, '/') === '/tareas') {
             if (substr($pathinfo, -1) !== '/') {

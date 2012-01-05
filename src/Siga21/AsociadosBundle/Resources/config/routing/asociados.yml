@@ -1,0 +1,32 @@
+asociados:
+    pattern:  /
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:index" }
+
+asociados_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:show" }
+
+asociados_new:
+    pattern:  /new
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:new" }
+
+asociados_create:
+    pattern:  /create
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:create" }
+    requirements: { _method: post }
+
+asociados_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:edit" }
+
+asociados_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:update" }
+    requirements: { _method: post }
+
+asociados_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:delete" }
+    requirements: { _method: post }
+
+

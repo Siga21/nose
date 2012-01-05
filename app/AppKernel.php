@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Ocaso\OcasoBundle\OcasoOcasoBundle(),
             new Siga21\SociosBundle\Siga21SociosBundle(),
             new Siga21\TareasBundle\Siga21TareasBundle(),
+            new Siga21\AsociadosBundle\Siga21AsociadosBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

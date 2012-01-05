@@ -66,6 +66,10 @@ class __TwigTemplate_5ee30fcde8ffef1a219e0ae4e3b57725 extends Twig_Template
         // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tareas_portada"), "html", null, true);
         echo "\">Tareas</a></li>
+   <li><a href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("asociados_portada"), "html", null, true);
+        echo "\">Asociados</a></li>
 </ul>
 ";
     }

@@ -1,0 +1,8 @@
+asociados_portada:
+    pattern:  /asociados/
+    defaults: { _controller: Siga21AsociadosBundle:Asociados:index}
+
+_asociados:
+    resource: ./routing/asociados.yml
+
+

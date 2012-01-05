@@ -33,6 +33,14 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
+       'asociados_portada' => true,
+       'asociados' => true,
+       'asociados_show' => true,
+       'asociados_new' => true,
+       'asociados_create' => true,
+       'asociados_edit' => true,
+       'asociados_update' => true,
+       'asociados_delete' => true,
        'tareas_portada' => true,
        'tareas' => true,
        'tareas_show' => true,
@@ -177,6 +185,46 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function get_configurator_finalRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
+    }
+
+    private function getasociados_portadaRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/asociados/',  ),));
+    }
+
+    private function getasociadosRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+    }
+
+    private function getasociados_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function getasociados_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/new',  ),));
+    }
+
+    private function getasociados_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/create',  ),));
+    }
+
+    private function getasociados_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function getasociados_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+    }
+
+    private function getasociados_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
     }
 
     private function gettareas_portadaRouteInfo()

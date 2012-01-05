@@ -20,6 +20,7 @@
       <parameter key="OcasoOcasoBundle">Ocaso\OcasoBundle\OcasoOcasoBundle</parameter>
       <parameter key="Siga21SociosBundle">Siga21\SociosBundle\Siga21SociosBundle</parameter>
       <parameter key="Siga21TareasBundle">Siga21\TareasBundle\Siga21TareasBundle</parameter>
+      <parameter key="Siga21AsociadosBundle">Siga21\AsociadosBundle\Siga21AsociadosBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -1603,6 +1604,7 @@
             <argument type="collection">
               <argument key="Siga21SociosBundle">Siga21\SociosBundle\Entity</argument>
               <argument key="Siga21TareasBundle">Siga21\TareasBundle\Entity</argument>
+              <argument key="Siga21AsociadosBundle">Siga21\AsociadosBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -1637,18 +1639,17 @@
               <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
                 <call method="addDriver">
                   <argument type="service">
-                    <service class="Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver" public="false">
-                      <argument type="collection">
-                        <argument>/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine</argument>
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service">
+                        <service class="Symfony\Bridge\Doctrine\Annotations\IndexedReader" public="false">
+                          <argument type="service" id="annotation_reader"/>
+                        </service>
                       </argument>
-                      <call method="setNamespacePrefixes">
-                        <argument type="collection">
-                          <argument key="/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine">Siga21\SociosBundle\Entity</argument>
-                        </argument>
-                      </call>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
+                      <argument type="collection">
+                        <argument>/var/www/nose/src/Siga21/SociosBundle/Entity</argument>
+                        <argument>/var/www/nose/src/Siga21/TareasBundle/Entity</argument>
+                        <argument>/var/www/nose/src/Siga21/AsociadosBundle/Entity</argument>
+                      </argument>
                     </service>
                   </argument>
                   <argument>Siga21\SociosBundle\Entity</argument>
@@ -1662,11 +1663,30 @@
                         </service>
                       </argument>
                       <argument type="collection">
+                        <argument>/var/www/nose/src/Siga21/SociosBundle/Entity</argument>
                         <argument>/var/www/nose/src/Siga21/TareasBundle/Entity</argument>
+                        <argument>/var/www/nose/src/Siga21/AsociadosBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Siga21\TareasBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service">
+                        <service class="Symfony\Bridge\Doctrine\Annotations\IndexedReader" public="false">
+                          <argument type="service" id="annotation_reader"/>
+                        </service>
+                      </argument>
+                      <argument type="collection">
+                        <argument>/var/www/nose/src/Siga21/SociosBundle/Entity</argument>
+                        <argument>/var/www/nose/src/Siga21/TareasBundle/Entity</argument>
+                        <argument>/var/www/nose/src/Siga21/AsociadosBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Siga21\AsociadosBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2030,6 +2050,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>Siga21TareasBundle</argument>
                   <argument>/var/www/nose/src/Siga21/TareasBundle/Resources/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>Siga21AsociadosBundle</argument>
+                  <argument>/var/www/nose/app/Resources/Siga21AsociadosBundle/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>Siga21AsociadosBundle</argument>
+                  <argument>/var/www/nose/src/Siga21/AsociadosBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
