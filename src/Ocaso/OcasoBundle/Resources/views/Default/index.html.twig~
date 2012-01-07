@@ -1,0 +1,16 @@
+{% extends "OcasoOcasoBundle::layout.html.twig" %}
+{% block title "O noso Bundle" %}
+
+{% block content_header '' %}
+
+{% block content %}
+<center><h1>Portada</h1>
+<h2>Usuario: {{ name }}</h2></center>
+<ul>
+   <li><a href="{{ path('Siga21SociosBundle_homepage') }} ">SOCIOS</a></li>
+   <li><a href="{{ path('Ocaso_adios', { 'name':'Dardi' }) }} ">Segunda accion primer controlador</a></li>
+   <li><a href="{{ path('mano_busca') }}">Busca socios por id</a></li>
+   <li><a href="{{ path('mano_buscan') }}">Busca socios por nombre</a></li>
+   <li><a href="{{ path('tareas_portada') }}">Tareas</a></li>
+</ul>
+{% endblock %}

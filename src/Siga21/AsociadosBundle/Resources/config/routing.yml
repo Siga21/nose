@@ -1,3 +1,8 @@
+#Siga21SociosBundle_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: Siga21SociosBundle:Default:index }
+
+
 asociados_portada:
     pattern:  /asociados/
     defaults: { _controller: Siga21AsociadosBundle:Asociados:index}

@@ -189,82 +189,82 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getasociados_portadaRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/asociados/',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/asociados/asociados/',  ),));
     }
 
     private function getasociadosRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/asociados/',  ),));
     }
 
     private function getasociados_showRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/asociados',  ),));
     }
 
     private function getasociados_newRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/new',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/asociados/new',  ),));
     }
 
     private function getasociados_createRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/create',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/asociados/create',  ),));
     }
 
     private function getasociados_editRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/asociados',  ),));
     }
 
     private function getasociados_updateRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/asociados',  ),));
     }
 
     private function getasociados_deleteRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/asociados',  ),));
     }
 
     private function gettareas_portadaRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/tareas/',  ),));
     }
 
     private function gettareasRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/',  ),));
     }
 
     private function gettareas_showRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/tareas',  ),));
     }
 
     private function gettareas_newRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/new',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/new',  ),));
     }
 
     private function gettareas_createRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/create',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/tareas/create',  ),));
     }
 
     private function gettareas_editRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/tareas',  ),));
     }
 
     private function gettareas_updateRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/tareas',  ),));
     }
 
     private function gettareas_deleteRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/tareas',  ),));
     }
 
     private function getOcaso_principalRouteInfo()
@@ -284,61 +284,61 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getSiga21SociosBundle_homepageRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/mano/',  ),));
     }
 
     private function getmanoRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/',  ),));
     }
 
     private function getmano_showRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/mano',  ),));
     }
 
     private function getmano_newRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/new',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/new',  ),));
     }
 
     private function getmano_createRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/create',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/mano/create',  ),));
     }
 
     private function getmano_editRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/mano',  ),));
     }
 
     private function getmano_updateRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/mano',  ),));
     }
 
     private function getmano_deleteRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/mano',  ),));
     }
 
     private function getmano_buscaRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/busca',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/busca',  ),));
     }
 
     private function getmano_buscashowRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscashowAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/buscashow',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscashowAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/buscashow',  ),));
     }
 
     private function getmano_buscanRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/buscan',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/buscan',  ),));
     }
 
     private function getmano_buscanshowRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanshowAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/buscanshow',  ),));
+        return array(array (), array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanshowAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/mano/buscanshow',  ),));
     }
 }

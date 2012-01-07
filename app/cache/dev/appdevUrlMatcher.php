@@ -143,127 +143,133 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // asociados_portada
-        if (rtrim($pathinfo, '/') === '/asociados') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'asociados_portada');
+        if (0 === strpos($pathinfo, '/asociados')) {
+            // asociados_portada
+            if (rtrim($pathinfo, '/') === '/asociados/asociados') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'asociados_portada');
+                }
+                return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',  '_route' => 'asociados_portada',);
             }
-            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',  '_route' => 'asociados_portada',);
-        }
 
-        // asociados
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'asociados');
+            // asociados
+            if (rtrim($pathinfo, '/') === '/asociados') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'asociados');
+                }
+                return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',  '_route' => 'asociados',);
             }
-            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::indexAction',  '_route' => 'asociados',);
-        }
 
-        // asociados_show
-        if (preg_match('#^/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::showAction',)), array('_route' => 'asociados_show'));
-        }
-
-        // asociados_new
-        if ($pathinfo === '/new') {
-            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::newAction',  '_route' => 'asociados_new',);
-        }
-
-        // asociados_create
-        if ($pathinfo === '/create') {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_asociados_create;
+            // asociados_show
+            if (preg_match('#^/asociados/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::showAction',)), array('_route' => 'asociados_show'));
             }
-            return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::createAction',  '_route' => 'asociados_create',);
-        }
-        not_asociados_create:
 
-        // asociados_edit
-        if (preg_match('#^/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::editAction',)), array('_route' => 'asociados_edit'));
-        }
-
-        // asociados_update
-        if (preg_match('#^/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_asociados_update;
+            // asociados_new
+            if ($pathinfo === '/asociados/new') {
+                return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::newAction',  '_route' => 'asociados_new',);
             }
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::updateAction',)), array('_route' => 'asociados_update'));
-        }
-        not_asociados_update:
 
-        // asociados_delete
-        if (preg_match('#^/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_asociados_delete;
+            // asociados_create
+            if ($pathinfo === '/asociados/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_asociados_create;
+                }
+                return array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::createAction',  '_route' => 'asociados_create',);
             }
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::deleteAction',)), array('_route' => 'asociados_delete'));
-        }
-        not_asociados_delete:
+            not_asociados_create:
 
-        // tareas_portada
-        if (rtrim($pathinfo, '/') === '/tareas') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'tareas_portada');
+            // asociados_edit
+            if (preg_match('#^/asociados/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::editAction',)), array('_route' => 'asociados_edit'));
             }
-            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'tareas_portada',);
-        }
 
-        // tareas
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'tareas');
+            // asociados_update
+            if (preg_match('#^/asociados/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_asociados_update;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::updateAction',)), array('_route' => 'asociados_update'));
             }
-            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'tareas',);
-        }
+            not_asociados_update:
 
-        // tareas_show
-        if (preg_match('#^/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::showAction',)), array('_route' => 'tareas_show'));
-        }
-
-        // tareas_new
-        if ($pathinfo === '/new') {
-            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::newAction',  '_route' => 'tareas_new',);
-        }
-
-        // tareas_create
-        if ($pathinfo === '/create') {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_tareas_create;
+            // asociados_delete
+            if (preg_match('#^/asociados/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_asociados_delete;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\AsociadosBundle\\Controller\\AsociadosController::deleteAction',)), array('_route' => 'asociados_delete'));
             }
-            return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::createAction',  '_route' => 'tareas_create',);
-        }
-        not_tareas_create:
+            not_asociados_delete:
 
-        // tareas_edit
-        if (preg_match('#^/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::editAction',)), array('_route' => 'tareas_edit'));
         }
 
-        // tareas_update
-        if (preg_match('#^/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_tareas_update;
+        if (0 === strpos($pathinfo, '/tareas')) {
+            // tareas_portada
+            if (rtrim($pathinfo, '/') === '/tareas/tareas') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'tareas_portada');
+                }
+                return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'tareas_portada',);
             }
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::updateAction',)), array('_route' => 'tareas_update'));
-        }
-        not_tareas_update:
 
-        // tareas_delete
-        if (preg_match('#^/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_tareas_delete;
+            // tareas
+            if (rtrim($pathinfo, '/') === '/tareas') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'tareas');
+                }
+                return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'tareas',);
             }
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::deleteAction',)), array('_route' => 'tareas_delete'));
+
+            // tareas_show
+            if (preg_match('#^/tareas/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::showAction',)), array('_route' => 'tareas_show'));
+            }
+
+            // tareas_new
+            if ($pathinfo === '/tareas/new') {
+                return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::newAction',  '_route' => 'tareas_new',);
+            }
+
+            // tareas_create
+            if ($pathinfo === '/tareas/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_tareas_create;
+                }
+                return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::createAction',  '_route' => 'tareas_create',);
+            }
+            not_tareas_create:
+
+            // tareas_edit
+            if (preg_match('#^/tareas/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::editAction',)), array('_route' => 'tareas_edit'));
+            }
+
+            // tareas_update
+            if (preg_match('#^/tareas/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_tareas_update;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::updateAction',)), array('_route' => 'tareas_update'));
+            }
+            not_tareas_update:
+
+            // tareas_delete
+            if (preg_match('#^/tareas/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_tareas_delete;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::deleteAction',)), array('_route' => 'tareas_delete'));
+            }
+            not_tareas_delete:
+
         }
-        not_tareas_delete:
 
         // Ocaso_principal
         if (0 === strpos($pathinfo, '/ocaso') && preg_match('#^/ocaso/(?P<name>[^/]+?)$#xs', $pathinfo, $matches)) {
@@ -283,85 +289,88 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\SecondoController::indexAction',  '_route' => 'Ocaso_dos',);
         }
 
-        // Siga21SociosBundle_homepage
-        if (rtrim($pathinfo, '/') === '/mano') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'Siga21SociosBundle_homepage');
+        if (0 === strpos($pathinfo, '/mano')) {
+            // Siga21SociosBundle_homepage
+            if (rtrim($pathinfo, '/') === '/mano/mano') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'Siga21SociosBundle_homepage');
+                }
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',  '_route' => 'Siga21SociosBundle_homepage',);
             }
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',  '_route' => 'Siga21SociosBundle_homepage',);
-        }
 
-        // mano
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'mano');
+            // mano
+            if (rtrim($pathinfo, '/') === '/mano') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'mano');
+                }
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',  '_route' => 'mano',);
             }
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::indexAction',  '_route' => 'mano',);
-        }
 
-        // mano_show
-        if (preg_match('#^/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::showAction',)), array('_route' => 'mano_show'));
-        }
-
-        // mano_new
-        if ($pathinfo === '/new') {
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::newAction',  '_route' => 'mano_new',);
-        }
-
-        // mano_create
-        if ($pathinfo === '/create') {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_mano_create;
+            // mano_show
+            if (preg_match('#^/mano/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::showAction',)), array('_route' => 'mano_show'));
             }
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::createAction',  '_route' => 'mano_create',);
-        }
-        not_mano_create:
 
-        // mano_edit
-        if (preg_match('#^/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::editAction',)), array('_route' => 'mano_edit'));
-        }
-
-        // mano_update
-        if (preg_match('#^/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_mano_update;
+            // mano_new
+            if ($pathinfo === '/mano/new') {
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::newAction',  '_route' => 'mano_new',);
             }
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::updateAction',)), array('_route' => 'mano_update'));
-        }
-        not_mano_update:
 
-        // mano_delete
-        if (preg_match('#^/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_mano_delete;
+            // mano_create
+            if ($pathinfo === '/mano/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_mano_create;
+                }
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::createAction',  '_route' => 'mano_create',);
             }
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::deleteAction',)), array('_route' => 'mano_delete'));
-        }
-        not_mano_delete:
+            not_mano_create:
 
-        // mano_busca
-        if ($pathinfo === '/busca') {
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',  '_route' => 'mano_busca',);
-        }
+            // mano_edit
+            if (preg_match('#^/mano/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::editAction',)), array('_route' => 'mano_edit'));
+            }
 
-        // mano_buscashow
-        if ($pathinfo === '/buscashow') {
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscashowAction',  '_route' => 'mano_buscashow',);
-        }
+            // mano_update
+            if (preg_match('#^/mano/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_mano_update;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::updateAction',)), array('_route' => 'mano_update'));
+            }
+            not_mano_update:
 
-        // mano_buscan
-        if ($pathinfo === '/buscan') {
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanAction',  '_route' => 'mano_buscan',);
-        }
+            // mano_delete
+            if (preg_match('#^/mano/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_mano_delete;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::deleteAction',)), array('_route' => 'mano_delete'));
+            }
+            not_mano_delete:
 
-        // mano_buscanshow
-        if ($pathinfo === '/buscanshow') {
-            return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanshowAction',  '_route' => 'mano_buscanshow',);
+            // mano_busca
+            if ($pathinfo === '/mano/busca') {
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',  '_route' => 'mano_busca',);
+            }
+
+            // mano_buscashow
+            if ($pathinfo === '/mano/buscashow') {
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscashowAction',  '_route' => 'mano_buscashow',);
+            }
+
+            // mano_buscan
+            if ($pathinfo === '/mano/buscan') {
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanAction',  '_route' => 'mano_buscan',);
+            }
+
+            // mano_buscanshow
+            if ($pathinfo === '/mano/buscanshow') {
+                return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanshowAction',  '_route' => 'mano_buscanshow',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

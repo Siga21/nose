@@ -1,0 +1,32 @@
+Siga21AsociadosBundle:
+    resource: "@Siga21AsociadosBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+Siga21TareasBundle:
+    resource: "@Siga21TareasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+
+#-----------ocaso bundle, o noso bundle ---------------
+OcasoOcasoBundle:
+    resource: "@OcasoOcasoBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+Siga21SociosBundle:
+        resource: "@Siga21SociosBundle/Resources/config/routing.yml"
+        prefix:   /mano/
+    
+Siga21TareasBundle:
+        resource: "@Siga21TareasBundle/Resources/config/routing.yml"
+        prefix:   /tareas
+
+Siga21AsociadosBundle:
+        resource: "@Siga21AsociadosBundle/Resources/config/routing.yml"
+        prefix:   /asociados
+

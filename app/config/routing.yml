@@ -24,10 +24,9 @@ Siga21SociosBundle:
     
 Siga21TareasBundle:
         resource: "@Siga21TareasBundle/Resources/config/routing.yml"
-        prefix:   /
+        prefix:   /tareas
 
 Siga21AsociadosBundle:
         resource: "@Siga21AsociadosBundle/Resources/config/routing.yml"
-        prefix:   /
-
+        prefix:   /asociados
 
