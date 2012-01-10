@@ -20,13 +20,13 @@ OcasoOcasoBundle:
     
 Siga21SociosBundle:
         resource: "@Siga21SociosBundle/Resources/config/routing.yml"
-        prefix:   /mano/
+        prefix:   /
     
-Siga21TareasBundle:
-        resource: "@Siga21TareasBundle/Resources/config/routing.yml"
-        prefix:   /tareas
+#Siga21TareasBundle:
+#        resource: "@Siga21TareasBundle/Resources/config/routing.yml"
+#        prefix:   /tareas
 
-Siga21AsociadosBundle:
-        resource: "@Siga21AsociadosBundle/Resources/config/routing.yml"
-        prefix:   /asociados
+#Siga21AsociadosBundle:
+#        resource: "@Siga21AsociadosBundle/Resources/config/routing.yml"
+#        prefix:   /asociados
 

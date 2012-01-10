@@ -289,9 +289,9 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Ocaso\\OcasoBundle\\Controller\\SecondoController::indexAction',  '_route' => 'Ocaso_dos',);
         }
 
-        if (0 === strpos($pathinfo, '/mano')) {
+        if (0 === strpos($pathinfo, '/socios')) {
             // Siga21SociosBundle_homepage
-            if (rtrim($pathinfo, '/') === '/mano/mano') {
+            if (rtrim($pathinfo, '/') === '/socios/mano') {
                 if (substr($pathinfo, -1) !== '/') {
                     return $this->redirect($pathinfo.'/', 'Siga21SociosBundle_homepage');
                 }
@@ -299,7 +299,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // mano
-            if (rtrim($pathinfo, '/') === '/mano') {
+            if (rtrim($pathinfo, '/') === '/socios') {
                 if (substr($pathinfo, -1) !== '/') {
                     return $this->redirect($pathinfo.'/', 'mano');
                 }
@@ -307,17 +307,17 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // mano_show
-            if (preg_match('#^/mano/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+            if (preg_match('#^/socios/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
                 return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::showAction',)), array('_route' => 'mano_show'));
             }
 
             // mano_new
-            if ($pathinfo === '/mano/new') {
+            if ($pathinfo === '/socios/new') {
                 return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::newAction',  '_route' => 'mano_new',);
             }
 
             // mano_create
-            if ($pathinfo === '/mano/create') {
+            if ($pathinfo === '/socios/create') {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
                     goto not_mano_create;
@@ -327,12 +327,12 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_mano_create:
 
             // mano_edit
-            if (preg_match('#^/mano/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+            if (preg_match('#^/socios/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
                 return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::editAction',)), array('_route' => 'mano_edit'));
             }
 
             // mano_update
-            if (preg_match('#^/mano/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+            if (preg_match('#^/socios/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
                     goto not_mano_update;
@@ -342,7 +342,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_mano_update:
 
             // mano_delete
-            if (preg_match('#^/mano/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+            if (preg_match('#^/socios/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
                     goto not_mano_delete;
@@ -352,22 +352,22 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_mano_delete:
 
             // mano_busca
-            if ($pathinfo === '/mano/busca') {
+            if ($pathinfo === '/socios/busca') {
                 return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscaAction',  '_route' => 'mano_busca',);
             }
 
             // mano_buscashow
-            if ($pathinfo === '/mano/buscashow') {
+            if ($pathinfo === '/socios/buscashow') {
                 return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscashowAction',  '_route' => 'mano_buscashow',);
             }
 
             // mano_buscan
-            if ($pathinfo === '/mano/buscan') {
+            if ($pathinfo === '/socios/buscan') {
                 return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanAction',  '_route' => 'mano_buscan',);
             }
 
             // mano_buscanshow
-            if ($pathinfo === '/mano/buscanshow') {
+            if ($pathinfo === '/socios/buscanshow') {
                 return array (  '_controller' => 'Siga21\\SociosBundle\\Controller\\ManoController::buscanshowAction',  '_route' => 'mano_buscanshow',);
             }
 

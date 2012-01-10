@@ -20,7 +20,7 @@ OcasoOcasoBundle:
     
 Siga21SociosBundle:
         resource: "@Siga21SociosBundle/Resources/config/routing.yml"
-        prefix:   /
+        prefix:   /socios
     
 Siga21TareasBundle:
         resource: "@Siga21TareasBundle/Resources/config/routing.yml"
