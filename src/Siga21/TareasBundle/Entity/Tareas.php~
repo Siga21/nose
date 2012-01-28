@@ -36,12 +36,10 @@ class Tareas
      */
     private $Fecha;
 
-    /**
-     * @var integer $Socio
-     *
-     * @ORM\Column(name="Socio", type="integer")
+   /** 
+     * @ORM\ManyToOne(targetEntity="Siga21\AsociadosBundle\Entity\Asociados") 
      */
-    private $Socio;
+    private $socios;
 
     /**
      * @var string $Notas
@@ -58,25 +56,15 @@ class Tareas
      */
     private $Terminada;
 
+
     /**
      * Get id
      *
      * @return integer 
      */
-
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set Id
-     *
-     * @param integer $id
-     */
-    public function setId($id)
-    {
-        $this->Id = $id;
     }
 
     /**
@@ -120,26 +108,6 @@ class Tareas
     }
 
     /**
-     * Set Socio
-     *
-     * @param integer $socio
-     */
-    public function setSocio($socio)
-    {
-        $this->Socio = $socio;
-    }
-
-    /**
-     * Get Socio
-     *
-     * @return integer 
-     */
-    public function getSocio()
-    {
-        return $this->Socio;
-    }
-
-    /**
      * Set Notas
      *
      * @param string $notas
@@ -179,5 +147,24 @@ class Tareas
         return $this->Terminada;
     }
 
+    /**
+     * Set socios
+     *
+     * @param Siga21\AsociadosBundle\Entity\Asociados $socios
+     */
+    public function setSocios(\Siga21\AsociadosBundle\Entity\Asociados $socios)
+    {
+        $this->socios = $socios;
+    }
+
+    /**
+     * Get socios
+     *
+     * @return Siga21\AsociadosBundle\Entity\Asociados 
+     */
+    public function getSocios()
+    {
+        return $this->socios;
+    }
    
 }

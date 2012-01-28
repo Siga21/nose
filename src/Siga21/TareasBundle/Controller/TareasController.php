@@ -26,9 +26,9 @@ class TareasController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entities = $em->getRepository('Siga21TareasBundle:Tareas')->findAll();
-  /*      $query = $em->createQuery('SELECT p FROM Siga21TareasBundle:Tareas p');
-        $entities = $query->getResult(); */
+   /*    $entities = $em->getRepository('Siga21TareasBundle:Tareas')->findAll();*/
+        $query = $em->createQuery('SELECT p,c FROM Siga21TareasBundle:Tareas p JOIN p.socios c ');
+        $entities = $query->getResult(); 
 
         return array('entities' => $entities);
     }

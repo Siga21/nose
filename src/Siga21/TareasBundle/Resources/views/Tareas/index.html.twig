@@ -10,6 +10,7 @@
             <th>Notas</th>
             <th>Terminada</th>
             <th>Actions</th>
+         
         </tr>
     </thead>
     <tbody>
@@ -18,9 +19,10 @@
             <td><a href="{{ path('tareas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.Nombre }}</td>
             <td>{% if entity.Fecha %}{{ entity.Fecha|date('Y-m-d H:i:s') }}{% endif%}</td>
-            <td>{{ entity.Socio }}</td>
+            <td>{{ entity.socios }}</td>
             <td>{{ entity.Notas }}</td>
             <td>{{ entity.Terminada }}</td>
+         
             <td>
                 <ul>
                     <li>
