@@ -1,7 +1,9 @@
 tareas:
     pattern:  /
     defaults: { _controller: "Siga21TareasBundle:Tareas:index" }
-
+tareas_unosolo:
+    pattern:  /unosolo
+    defaults: { _controller: "Siga21TareasBundle:Tareas:unosolo" }
 tareas_show:
     pattern:  /{id}/show
     defaults: { _controller: "Siga21TareasBundle:Tareas:show" }

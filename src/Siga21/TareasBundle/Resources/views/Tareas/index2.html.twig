@@ -1,0 +1,29 @@
+<h1>Tareas list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Socio</th>
+            <th>Notas</th>
+            <th>Terminada</th>
+            <th>Eso</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td>{{ etareas.Nombre }}</td>
+            <td>{% if etareas.Fecha %}{{ etareas.Fecha|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>{{ etareas.socios }}</td>
+            <td>{{ etareas.Notas }}</td>
+            <td>{{ etareas.Terminada }}</td>
+            <td>{{ etareas.Asociados.nome }}</td>
+    
+        </tr>
+ 
+    </tbody>
+</table>
+

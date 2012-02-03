@@ -1,0 +1,32 @@
+tareas:
+    pattern:  /
+    defaults: { _controller: "Siga21TareasBundle:Tareas:index" }
+
+tareas_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Siga21TareasBundle:Tareas:show" }
+
+tareas_new:
+    pattern:  /new
+    defaults: { _controller: "Siga21TareasBundle:Tareas:new" }
+
+tareas_create:
+    pattern:  /create
+    defaults: { _controller: "Siga21TareasBundle:Tareas:create" }
+    requirements: { _method: post }
+
+tareas_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Siga21TareasBundle:Tareas:edit" }
+
+tareas_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Siga21TareasBundle:Tareas:update" }
+    requirements: { _method: post }
+
+tareas_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Siga21TareasBundle:Tareas:delete" }
+    requirements: { _method: post }
+
+

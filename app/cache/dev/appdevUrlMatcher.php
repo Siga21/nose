@@ -224,6 +224,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',  '_route' => 'tareas',);
             }
 
+            // tareas_unosolo
+            if ($pathinfo === '/tareas/unosolo') {
+                return array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::unosoloAction',  '_route' => 'tareas_unosolo',);
+            }
+
             // tareas_show
             if (preg_match('#^/tareas/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
                 return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::showAction',)), array('_route' => 'tareas_show'));

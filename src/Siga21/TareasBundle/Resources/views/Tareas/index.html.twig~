@@ -11,6 +11,7 @@
             <th>Terminada</th>
             <th>Actions</th>
             <th>Eso</th>
+         
         </tr>
     </thead>
     <tbody>
@@ -22,7 +23,8 @@
             <td>{{ entity.socios }}</td>
             <td>{{ entity.Notas }}</td>
             <td>{{ entity.Terminada }}</td>
-            <td>{{ entity.Asociados.nome }}</td>
+            <td>{{ entity.nome7 }}</td>
+         
             <td>
                 <ul>
                     <li>

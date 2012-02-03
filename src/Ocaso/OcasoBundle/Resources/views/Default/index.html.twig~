@@ -12,5 +12,6 @@
    <li><a href="{{ path('mano_busca') }}">Busca socios por id</a></li>
    <li><a href="{{ path('mano_buscan') }}">Busca socios por nombre</a></li>
    <li><a href="{{ path('tareas_portada') }}">Tareas</a></li>
+   <li><a href="{{ path('asociados_portada') }}">Asociados</a></li>
 </ul>
 {% endblock %}

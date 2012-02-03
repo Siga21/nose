@@ -43,6 +43,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'asociados_delete' => true,
        'tareas_portada' => true,
        'tareas' => true,
+       'tareas_unosolo' => true,
        'tareas_show' => true,
        'tareas_new' => true,
        'tareas_create' => true,
@@ -235,6 +236,11 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function gettareasRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/',  ),));
+    }
+
+    private function gettareas_unosoloRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Siga21\\TareasBundle\\Controller\\TareasController::unosoloAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/tareas/unosolo',  ),));
     }
 
     private function gettareas_showRouteInfo()

@@ -16,6 +16,21 @@ use Siga21\TareasBundle\Form\TareasType;
  */
 class TareasController extends Controller
 {
+
+    /**
+    
+     *
+     * @Route("/unosolo", name="tareas_unosolo")
+     * @Template()
+     */
+    public function unosoloAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $query = $em->createQuery('SELECT p, c FROM Siga21TareasBundle:Tareas p JOIN p.socios c ');
+        $query->setMaxResults(1);  
+        $entities = $query->getSingleResult(); 
+        return $this->render('Siga21TareasBundle:Tareas:index2.html.twig', array('etareas' => $entities));
+    }
     /**
      * Lists all Tareas entities.
      *
@@ -25,11 +40,9 @@ class TareasController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-
-   /*    $entities = $em->getRepository('Siga21TareasBundle:Tareas')->findAll();*/
-        $query = $em->createQuery('SELECT p,eso = c.nome FROM Siga21TareasBundle:Tareas p JOIN p.socios c ');
+         $query = $em->createQuery('SELECT p, c FROM Siga21TareasBundle:Tareas p JOIN p.socios c ');
         $entities = $query->getResult(); 
-
+   
         return array('entities' => $entities);
     }
 
