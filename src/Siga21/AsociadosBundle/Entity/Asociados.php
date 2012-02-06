@@ -35,6 +35,19 @@ class Asociados
      */
     private $nome;
 
+   /**
+     * @var string $telefono
+     *
+     * @ORM\Column(name="telefono", type="string", length=255)
+     */
+    private $telefono;
+
+   /**
+     * @var string $correo
+     *
+     * @ORM\Column(name="correo", type="string", length=255)
+     */
+    private $correo;
 
     /**
      * Get id
@@ -88,5 +101,45 @@ class Asociados
     public function __toString()
     {
 	return $this->getnome();	
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string 
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * Set correo
+     *
+     * @param string $correo
+     */
+    public function setCorreo($correo)
+    {
+        $this->correo = $correo;
+    }
+
+    /**
+     * Get correo
+     *
+     * @return string 
+     */
+    public function getCorreo()
+    {
+        return $this->correo;
     }
 }

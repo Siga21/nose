@@ -8,23 +8,22 @@
             <th>Socio</th>
             <th>Notas</th>
             <th>Terminada</th>
-            <th>Actions</th>
             <th>Eso</th>
          
         </tr>
     </thead>
     <tbody>
-    
+      {% for entity in etareas %}
         <tr>
-            <td>{{ etareas.Nombre }}</td>
-            <td>{% if etareas.Fecha %}{{ etareas.Fecha|date('Y-m-d H:i:s') }}{% endif%}</td>
-            <td>{{ etareas.socios }}</td>
-            <td>{{ etareas.Notas }}</td>
-            <td>{{ etareas.Terminada }}</td>
-            <td>{{ etareas.Asociados.nome }}</td>
+            <td>{{ entity.Nombre }}</td>
+            <td>{% if entity.Fecha %}{{ entity.Fecha|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>{{ entity.socios }}</td>
+            <td>{{ entity.Notas }}</td>
+            <td>{{ entity.Terminada }}</td>
+            <td>{{ entity.socios.nome }}</td>
     
         </tr>
- 
+   {% endfor %}
     </tbody>
 </table>
 

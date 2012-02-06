@@ -4,9 +4,6 @@ namespace Siga21\TareasBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
-  * @ORM\Entity(repositoryClass="Siga21\TareasBundle\Entity\TareasREpository")
-  */
 
 /**
  * Siga21\TareasBundle\Entity\Tareas
@@ -14,6 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
+
+
+/**
+  * @ORM\Entity(repositoryClass="Siga21\TareasBundle\Entity\TareasRepository")
+  */
+
 class Tareas
 {
     /**

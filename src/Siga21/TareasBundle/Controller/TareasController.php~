@@ -25,12 +25,15 @@ class TareasController extends Controller
      */
     public function unosoloAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+       /* $em = $this->getDoctrine()->getEntityManager();
         $query = $em->createQuery('SELECT p, c FROM Siga21TareasBundle:Tareas p JOIN p.socios c ');
         $query->setMaxResults(1);  
-        $entities = $query->getSingleResult(); 
-        return $this->render('Siga21TareasBundle:Tareas:index2.html.twig', array('etareas' => $entities));
-    }
+        $entities = $query->getSingleResult();
+        return $this->render('Siga21TareasBundle:Tareas:index2.html.twig', array('etareas' => $entities));*/
+        $em = $this->getDoctrine()->getEntityManager();
+        $etareas = $em->getRepository('TareasBundle:Tareas')->findbyTareasMas();
+        return $this->render('Siga21TareasBundle:Tareas:index2.html.twig', array('etareas' => $etareas));
+    }   
     /**
      * Lists all Tareas entities.
      *

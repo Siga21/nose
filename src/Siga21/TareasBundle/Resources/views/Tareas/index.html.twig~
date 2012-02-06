@@ -23,7 +23,7 @@
             <td>{{ entity.socios }}</td>
             <td>{{ entity.Notas }}</td>
             <td>{{ entity.Terminada }}</td>
-            <td>{{ entity.nome7 }}</td>
+            <td>{{ entity.nome }}</td>
          
             <td>
                 <ul>
