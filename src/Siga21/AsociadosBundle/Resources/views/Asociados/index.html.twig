@@ -6,6 +6,8 @@
             <th>Id</th>
             <th>Socios</th>
             <th>Nome</th>
+            <th>Telefono</th>
+            <th>Correo</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -15,6 +17,8 @@
             <td><a href="{{ path('asociados_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.socios }}</td>
             <td>{{ entity.nome }}</td>
+            <td>{{ entity.telefono }}</td>
+            <td>{{ entity.correo }}</td>
             <td>
                 <ul>
                     <li>

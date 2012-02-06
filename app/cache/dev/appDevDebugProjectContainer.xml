@@ -1639,18 +1639,17 @@
               <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
                 <call method="addDriver">
                   <argument type="service">
-                    <service class="Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver" public="false">
-                      <argument type="collection">
-                        <argument>/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine</argument>
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service">
+                        <service class="Symfony\Bridge\Doctrine\Annotations\IndexedReader" public="false">
+                          <argument type="service" id="annotation_reader"/>
+                        </service>
                       </argument>
-                      <call method="setNamespacePrefixes">
-                        <argument type="collection">
-                          <argument key="/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine">Siga21\SociosBundle\Entity</argument>
-                        </argument>
-                      </call>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
+                      <argument type="collection">
+                        <argument>/var/www/nose/src/Siga21/SociosBundle/Entity</argument>
+                        <argument>/var/www/nose/src/Siga21/TareasBundle/Entity</argument>
+                        <argument>/var/www/nose/src/Siga21/AsociadosBundle/Entity</argument>
+                      </argument>
                     </service>
                   </argument>
                   <argument>Siga21\SociosBundle\Entity</argument>
@@ -1664,6 +1663,7 @@
                         </service>
                       </argument>
                       <argument type="collection">
+                        <argument>/var/www/nose/src/Siga21/SociosBundle/Entity</argument>
                         <argument>/var/www/nose/src/Siga21/TareasBundle/Entity</argument>
                         <argument>/var/www/nose/src/Siga21/AsociadosBundle/Entity</argument>
                       </argument>
@@ -1680,6 +1680,7 @@
                         </service>
                       </argument>
                       <argument type="collection">
+                        <argument>/var/www/nose/src/Siga21/SociosBundle/Entity</argument>
                         <argument>/var/www/nose/src/Siga21/TareasBundle/Entity</argument>
                         <argument>/var/www/nose/src/Siga21/AsociadosBundle/Entity</argument>
                       </argument>

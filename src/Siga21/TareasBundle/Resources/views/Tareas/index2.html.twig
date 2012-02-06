@@ -20,7 +20,8 @@
             <td>{% if entity.Fecha %}{{ entity.Fecha|date('Y-m-d H:i:s') }}{% endif%}</td>
             <td>{{ entity.socios }}</td>
             <td>{{ entity.Notas }}</td>
-            <td>{{ entity.Terminada }}</td>
+            
+            <td>{% if entity.Terminada %}{{'terminada'}}{% else %}{{'sin terminar'}}{% endif%}</td>
             <td>{{ entity.socios.telefono }}</td>
             <td>{{ entity.socios.correo }}</td>
     

@@ -12,6 +12,8 @@ class AsociadosType extends AbstractType
         $builder
             ->add('socios')
             ->add('nome')
+            ->add('telefono')
+            ->add('correo')
         ;
     }
 
