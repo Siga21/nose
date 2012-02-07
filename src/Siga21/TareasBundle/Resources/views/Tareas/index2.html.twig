@@ -1,8 +1,14 @@
-<h1>Tareas list</h1>
-
-<table class="records_list">
+{% extends "Siga21SociosBundle::basesocios.html.twig" %}
+{% block title "Listado de Socios" %}
+{% block cabeza %}
+	<h1>Tareas y Asociados</h1>
+{% endblock %}
+{% block contenido %}
+<center>
+<br />
+<table  cellpading="5" border="1" style="font:bold 16px Arial;color: #a0a0a0; background-color #fff; border-collapse: collapse;">
     <thead>
-        <tr>
+        <tr padding='3'>
             <th>Nombre</th>
             <th>Fecha</th>
             <th>Socio</th>
@@ -16,17 +22,22 @@
     <tbody>
       {% for entity in etareas %}
         <tr>
-            <td>{{ entity.Nombre }}</td>
-            <td>{% if entity.Fecha %}{{ entity.Fecha|date('Y-m-d H:i:s') }}{% endif%}</td>
-            <td>{{ entity.socios }}</td>
-            <td>{{ entity.Notas }}</td>
-            
-            <td>{% if entity.Terminada %}{{'terminada'}}{% else %}{{'sin terminar'}}{% endif%}</td>
-            <td>{{ entity.socios.telefono }}</td>
-            <td>{{ entity.socios.correo }}</td>
+            <td align="center" width="150">{{ entity.Nombre }}</td>
+            <td align="center" width="100">{% if entity.Fecha %}{{ entity.Fecha|date('d-m-Y') }}{% endif%}</td>
+            <td align="center" width="100">{{ entity.socios }}</td>
+            <td align="center" width="100">{{ entity.Notas }}</td>
+            <td align="center" width="10">{{ entity.Terminada }}</td>
+            <td align="center" width="100">{{ entity.socios.telefono }}</td>
+            <td align="center" width="100">{{ entity.socios.correo }}</td>
     
         </tr>
    {% endfor %}
     </tbody>
 </table>
+<br />
+</center>
+{% endblock %}
 
+{% block footer %}
+<p>(c) nocopyright 2011</p>
+{% endblock %}
