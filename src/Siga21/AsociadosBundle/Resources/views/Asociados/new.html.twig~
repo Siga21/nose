@@ -1,0 +1,26 @@
+<h1>Asociados creation</h1>
+
+<form action="{{ path('asociados_create') }}" method="post" {{ form_enctype(form) }}>
+
+<fieldset>
+{{ form_row(form.socios) }}
+{{ form_label(form.nome, 'nome do usuario') }}
+{{ form_row(form.nome) }}
+{{ form_row(form.correo) }}
+{{ form_row(form.telefono) }}
+
+</fieldset>
+
+
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('asociados') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>

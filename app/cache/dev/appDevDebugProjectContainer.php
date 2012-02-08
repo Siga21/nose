@@ -240,27 +240,31 @@ class appDevDebugProjectContainer extends Container
         $d = new \Doctrine\Common\Cache\ArrayCache();
         $d->setNamespace('sf2orm_default_70e91f7f82ba1e3c31d2afda3ca35516');
 
-        $e = new \Symfony\Bridge\Doctrine\Annotations\IndexedReader($a);
+        $e = new \Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver(array(0 => '/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine'));
+        $e->setNamespacePrefixes(array('/var/www/nose/src/Siga21/SociosBundle/Resources/config/doctrine' => 'Siga21\\SociosBundle\\Entity'));
+        $e->setGlobalBasename('mapping');
 
-        $f = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($e, array(0 => '/var/www/nose/src/Siga21/SociosBundle/Entity', 1 => '/var/www/nose/src/Siga21/TareasBundle/Entity', 2 => '/var/www/nose/src/Siga21/AsociadosBundle/Entity'));
+        $f = new \Symfony\Bridge\Doctrine\Annotations\IndexedReader($a);
 
-        $g = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $g->addDriver($f, 'Siga21\\SociosBundle\\Entity');
-        $g->addDriver($f, 'Siga21\\TareasBundle\\Entity');
-        $g->addDriver($f, 'Siga21\\AsociadosBundle\\Entity');
+        $g = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($f, array(0 => '/var/www/nose/src/Siga21/TareasBundle/Entity', 1 => '/var/www/nose/src/Siga21/AsociadosBundle/Entity'));
 
-        $h = new \Doctrine\ORM\Configuration();
-        $h->setEntityNamespaces(array('Siga21SociosBundle' => 'Siga21\\SociosBundle\\Entity', 'Siga21TareasBundle' => 'Siga21\\TareasBundle\\Entity', 'Siga21AsociadosBundle' => 'Siga21\\AsociadosBundle\\Entity'));
-        $h->setMetadataCacheImpl($b);
-        $h->setQueryCacheImpl($c);
-        $h->setResultCacheImpl($d);
-        $h->setMetadataDriverImpl($g);
-        $h->setProxyDir('/var/www/nose/app/cache/dev/doctrine/orm/Proxies');
-        $h->setProxyNamespace('Proxies');
-        $h->setAutoGenerateProxyClasses(true);
-        $h->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $h = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $h->addDriver($e, 'Siga21\\SociosBundle\\Entity');
+        $h->addDriver($g, 'Siga21\\TareasBundle\\Entity');
+        $h->addDriver($g, 'Siga21\\AsociadosBundle\\Entity');
 
-        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $h);
+        $i = new \Doctrine\ORM\Configuration();
+        $i->setEntityNamespaces(array('Siga21SociosBundle' => 'Siga21\\SociosBundle\\Entity', 'Siga21TareasBundle' => 'Siga21\\TareasBundle\\Entity', 'Siga21AsociadosBundle' => 'Siga21\\AsociadosBundle\\Entity'));
+        $i->setMetadataCacheImpl($b);
+        $i->setQueryCacheImpl($c);
+        $i->setResultCacheImpl($d);
+        $i->setMetadataDriverImpl($h);
+        $i->setProxyDir('/var/www/nose/app/cache/dev/doctrine/orm/Proxies');
+        $i->setProxyNamespace('Proxies');
+        $i->setAutoGenerateProxyClasses(true);
+        $i->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+
+        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $i);
     }
 
     /**

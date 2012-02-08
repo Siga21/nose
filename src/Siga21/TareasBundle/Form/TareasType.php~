@@ -10,7 +10,6 @@ class TareasType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('id')
             ->add('Nombre')
             ->add('Fecha')
             ->add('socios')

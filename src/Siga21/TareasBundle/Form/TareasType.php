@@ -11,7 +11,7 @@ class TareasType extends AbstractType
     {
         $builder
             ->add('Nombre')
-            ->add('Fecha')
+            ->add('Fecha', 'birthday')
             ->add('socios')
             ->add('Notas')
             ->add('Terminada')

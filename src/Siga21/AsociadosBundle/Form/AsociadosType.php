@@ -13,7 +13,7 @@ class AsociadosType extends AbstractType
             ->add('socios')
             ->add('nome')
             ->add('telefono')
-            ->add('correo')
+            ->add('correo', 'email')
         ;
     }
 
