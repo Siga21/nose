@@ -1,2 +1,0 @@
-[2011-12-15 21:48:56] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /var/www/nose/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/EventListener/RouterListener.php line 83 [] []
-[2011-12-19 13:26:09] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /var/www/nose/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/EventListener/RouterListener.php line 83 [] []
