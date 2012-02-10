@@ -1,18 +1,55 @@
-<h1>Asociados creation</h1>
+{% extends "Siga21SociosBundle::basesocios.html.twig" %}
+{% block title "Ver Socio" %}
+{% block cabeza %}
+<h1>Nuevo Asociado</h1>
+{% endblock %}
+{% block contenido %}
+<center>
 
 <form action="{{ path('asociados_create') }}" method="post" {{ form_enctype(form) }}>
+   {{ form_errors(form) }}
+ 
+<table  cellpading="5" border="0" style="font:bold 16px Arial;color: #a0a0a0; background-color #fff; border-collapse: collapse;">  
 
 
-   {{ form_widget(form) }} 
-    <p>
-        <button type="submit">Create</button>
-    </p>
+<tr> 
+   <td width='120' align='center' class='elcampo'> {{ form_label(form.socios, 'o socio') }} </td>
+   <td> {{ form_widget(form.socios) }} </td>
+</tr>
+<tr>
+   <td width='120' align='center' class='elcampo'> {{ form_label(form.nome, 'o nome') }} </td>
+   <td> {{ form_widget(form.nome) }} </td>
+</tr>
+<tr>
+   <td width='120' align='center' class='elcampo'> {{ form_label(form.telefono, 'o telefono') }} </td>
+   <td> {{ form_widget(form.telefono) }} </td>
+</tr>
+
+<tr>
+   <td width='120' align='center' class='elcampo'> {{ form_label(form.correo, 'o emilio') }} </td>
+   <td> {{ form_widget(form.correo) }} </td>
+
+</tr>
+  
+
+   {{ form_rest(form) }} 
+<tr>
+   <td align='center' colspan='2'>  
+      <button type="submit">
+         <img src="{{ asset('bundles/Siga21/images/diskette.gif') }}" alt="Adentror">
+      </button> 
+   </td>
+</tr>
+</table>
 </form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('asociados') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+
+</center>
+{% endblock %}
+
+{% block footer %}
+<a href="{{ path('asociados') }}">
+   <img src="{{ asset('bundles/Siga21/images/back.gif') }}" alt="Voltar">
+</a>
+<p>(c) nocopyright 2011</p>
+{% endblock %}
