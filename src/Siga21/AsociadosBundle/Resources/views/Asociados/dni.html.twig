@@ -1,0 +1,22 @@
+{% extends "Siga21SociosBundle::basesocios.html.twig" %}
+{% block title "Ver dni" %}
+{% block cabeza %}
+<h1>Letra DNI</h1>
+{% endblock %}
+{% block contenido %}
+<center>
+<form action="{{ path('asociados_dni') }}" method="post" {{ form_enctype(formulario) }}>
+   {{ form_errors(formulario) }}
+ 
+   {{ form_label(formulario.numero, 'o numero') }} 
+   {{ form_widget(formulario.numero) }} 
+   {{ form_rest(formulario) }} 
+      <button type="submit">
+         <img src="{{ asset('bundles/Siga21/images/diskette.gif') }}" alt="Adentror">
+      </button> 
+</form>
+</center>
+{% endblock %}
+{% block footer %}
+<p>(c) nocopyright 2011</p>
+{% endblock %}

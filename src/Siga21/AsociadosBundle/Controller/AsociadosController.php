@@ -8,6 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Siga21\AsociadosBundle\Entity\Asociados;
 use Siga21\AsociadosBundle\Form\AsociadosType;
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Asociados controller.
@@ -199,4 +201,27 @@ class AsociadosController extends Controller
             ->getForm()
         ;
     }
+
+    public function dniAction(Request $request)
+    {
+       $form = $this->createFormBuilder()
+          ->add('numero','integer')
+          ->getForm();
+       if ($request->getMethod() == 'POST')
+       {
+           $form->bindRequest($request);
+           if($form->isValid())
+           {
+               $numero_dni = $form->getData();
+               return $this->render('Siga21AsociadosBundle:Asociados:dni_dos.html.twig', array('dninumber' =>$numero_dni)); 
+             
+           }
+       }
+       return $this->render('Siga21AsociadosBundle:Asociados:dni.html.twig', array('formulario' => $form->createView(),));
+    } 
+    
+   
+    
+
+
 }

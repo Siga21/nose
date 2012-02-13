@@ -29,4 +29,7 @@ asociados_delete:
     defaults: { _controller: "Siga21AsociadosBundle:Asociados:delete" }
     requirements: { _method: post }
 
+asociados_dni:
+    pattern:  /dni
+    defaults: { _controller: "Siga21AsociadosBundle:Asociados:dni" }
 
