@@ -213,7 +213,8 @@ class AsociadosController extends Controller
            if($form->isValid())
            {
                $numero_dni = $form->getData();
-               return $this->render('Siga21AsociadosBundle:Asociados:dni_dos.html.twig', array('dninumber' =>$numero_dni)); 
+               $numerito = $numero_dni['numero'];
+               return $this->render('Siga21AsociadosBundle:Asociados:dni_dos.html.twig', array('numerito'=> $numerito)); 
              
            }
        }
