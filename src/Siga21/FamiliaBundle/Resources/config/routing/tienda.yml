@@ -1,0 +1,30 @@
+tienda:
+    pattern:  /
+    defaults: { _controller: "Siga21FamiliaBundle:Tienda:index" }
+
+tienda_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Siga21FamiliaBundle:Tienda:show" }
+
+tienda_new:
+    pattern:  /new
+    defaults: { _controller: "Siga21FamiliaBundle:Tienda:new" }
+
+tienda_create:
+    pattern:  /create
+    defaults: { _controller: "Siga21FamiliaBundle:Tienda:create" }
+    requirements: { _method: post }
+
+tienda_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Siga21FamiliaBundle:Tienda:edit" }
+
+tienda_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Siga21FamiliaBundle:Tienda:update" }
+    requirements: { _method: post }
+
+tienda_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Siga21FamiliaBundle:Tienda:delete" }
+    requirements: { _method: post }

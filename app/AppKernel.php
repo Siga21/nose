@@ -21,7 +21,9 @@ class AppKernel extends Kernel
             new Siga21\SociosBundle\Siga21SociosBundle(),
             new Siga21\TareasBundle\Siga21TareasBundle(),
             new Siga21\AsociadosBundle\Siga21AsociadosBundle(),
-        );
+            new Siga21\ArticulosBundle\Siga21ArticulosBundle(),
+            new Siga21\FamiliaBundle\Siga21FamiliaBundle(),
+         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();

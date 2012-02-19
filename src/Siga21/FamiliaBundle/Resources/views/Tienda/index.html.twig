@@ -1,0 +1,43 @@
+<h1>Tienda list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('tienda_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.codigo }}</td>
+            <td>{{ entity.nombre }}</td>
+            <td>{{ entity.direccion }}</td>
+            <td>{{ entity.correo }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('tienda_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('tienda_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('tienda_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

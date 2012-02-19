@@ -1,3 +1,11 @@
+Siga21FamiliaBundle:
+    resource: "@Siga21FamiliaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+Siga21ArticulosBundle:
+    resource: "@Siga21ArticulosBundle/Resources/config/routing.yml"
+    prefix:   /
+
 Siga21AsociadosBundle:
     resource: "@Siga21AsociadosBundle/Controller/"
     type:     annotation

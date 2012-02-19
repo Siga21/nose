@@ -1,0 +1,11 @@
+familia_portada:
+    pattern:  /familia
+    defaults: { _controller: Siga21FamiliaBundle:Familia:index }
+_familia:
+    resource: ./routing/familia.yml
+
+tienda_portada:
+    pattern:  /tienda
+    defaults: { _controller: Siga21FamiliaBundle:Tienda:index }
+_tienda:
+    resource: ./routing/tienda.yml

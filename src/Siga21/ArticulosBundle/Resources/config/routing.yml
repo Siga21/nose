@@ -1,0 +1,8 @@
+articulos_portada:
+    pattern:  /articulos/
+    defaults: { _controller: Siga21ArticulosBundle:Articulos:index}
+
+_articulos:
+    resource: ./routing/articulos.yml
+
+

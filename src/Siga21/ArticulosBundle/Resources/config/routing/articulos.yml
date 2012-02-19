@@ -1,0 +1,31 @@
+articulos:
+    pattern:  /
+    defaults: { _controller: "Siga21ArticulosBundle:Articulos:index" }
+articulos_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Siga21ArticulosBundle:Articulos:show" }
+
+articulos_new:
+    pattern:  /new
+    defaults: { _controller: "Siga21ArticulosBundle:Articulos:new" }
+
+articulos_create:
+    pattern:  /create
+    defaults: { _controller: "Siga21ArticulosBundle:Articulos:create" }
+    requirements: { _method: post }
+
+articulos_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Siga21ArticulosBundle:Articulos:edit" }
+
+articulos_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Siga21ArticulosBundle:Articulos:update" }
+    requirements: { _method: post }
+
+articulos_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Siga21ArticulosBundle:Articulos:delete" }
+    requirements: { _method: post }
+
+

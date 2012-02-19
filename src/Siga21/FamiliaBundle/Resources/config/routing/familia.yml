@@ -1,0 +1,30 @@
+familia:
+    pattern:  /
+    defaults: { _controller: "Siga21FamiliaBundle:Familia:index" }
+
+familia_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Siga21FamiliaBundle:Familia:show" }
+
+familia_new:
+    pattern:  /new
+    defaults: { _controller: "Siga21FamiliaBundle:Familia:new" }
+
+familia_create:
+    pattern:  /create
+    defaults: { _controller: "Siga21FamiliaBundle:Familia:create" }
+    requirements: { _method: post }
+
+familia_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Siga21FamiliaBundle:Familia:edit" }
+
+familia_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Siga21FamiliaBundle:Familia:update" }
+    requirements: { _method: post }
+
+familia_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Siga21FamiliaBundle:Familia:delete" }
+    requirements: { _method: post }
