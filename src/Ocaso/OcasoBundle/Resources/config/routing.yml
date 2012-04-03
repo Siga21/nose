@@ -10,4 +10,7 @@ Ocaso_dos:
     pattern:  /controlador2/
     defaults: { _controller: OcasoOcasoBundle:Secondo:index }
 
+Ocaso_tres:
+    pattern:  /controlador3/
+    defaults: { _controller: OcasoOcasoBundle:Secondo:acona }
 
